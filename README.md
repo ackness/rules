@@ -37,63 +37,63 @@ rule_providers:
   reject:
     type: http
     behavior: domain
-    url: `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/reject.yaml`
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/reject.yaml"
     path: ./ruleset/reject.yaml
     interval: 86400
 
   ai:
     type: http
     behavior: domain
-    url: `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/ai.yaml`
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/ai.yaml"
     path: ./ruleset/ai.yaml
     interval: 86400
 
   analysis:
     type: http
     behavior: domain
-    url: `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/analysis.yaml`
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/analysis.yaml"
     path: ./ruleset/analysis.yaml
     interval: 86400
 
   cloudflare:
     type: http
     behavior: domain
-    url: `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/cloudflare.yaml`
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/cloudflare.yaml"
     path: ./ruleset/cloudflare.yaml
     interval: 86400
 
   cn-analysis:
     type: http
     behavior: domain
-    url: `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/cn-analysis.yaml`
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/cn-analysis.yaml"
     path: ./ruleset/cn-analysis.yaml
     interval: 86400
 
   crypto:
     type: http
     behavior: domain
-    url: `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/crypto.yaml`
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/crypto.yaml"
     path: ./ruleset/crypto.yaml
     interval: 86400
 
   lan:
     type: http
     behavior: domain
-    url: `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/LAN.yaml`
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/LAN.yaml"
     path: ./ruleset/LAN.yaml
     interval: 86400
 
   steam:
     type: http
     behavior: domain
-    url: `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/steam.yaml`
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/steam.yaml"
     path: ./ruleset/steam.yaml
     interval: 86400
 
   steam-download:
     type: http
     behavior: domain
-    url: `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/steam-download.yaml`
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/steam-download.yaml"
     path: ./ruleset/steam-download.yaml
     interval: 86400
 ```
