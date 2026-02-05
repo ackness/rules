@@ -1,0 +1,4 @@
+# Analysis
+payload:
+  # Google APIs (国内被干扰)
+  - DOMAIN-SUFFIX,googleapis.cn

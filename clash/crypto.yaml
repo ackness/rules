@@ -1,0 +1,35 @@
+# Crypto
+payload:
+  # Binance 币安
+  - DOMAIN-SUFFIX,binance.com
+  - DOMAIN-SUFFIX,binance.us
+  - DOMAIN-SUFFIX,bnbstatic.com
+  - DOMAIN-SUFFIX,saasexch.com
+  - DOMAIN-KEYWORD,binance
+  
+  # OKX 欧易
+  - DOMAIN-SUFFIX,okx.com
+  - DOMAIN-SUFFIX,okex.com
+  - DOMAIN-KEYWORD,okx
+  
+  # Coinbase
+  - DOMAIN-SUFFIX,coinbase.com
+  - DOMAIN-SUFFIX,coinbase.pro
+  - DOMAIN-KEYWORD,coinbase
+  
+  # Bybit
+  - DOMAIN-SUFFIX,bybit.com
+  - DOMAIN-KEYWORD,bybit
+  
+  # Gate.io
+  - DOMAIN-SUFFIX,gate.io
+  - DOMAIN-KEYWORD,gateio
+  
+  # Kraken
+  - DOMAIN-SUFFIX,kraken.com
+  
+  # 其他交易所
+  - DOMAIN-SUFFIX,crypto.com
+  - DOMAIN-SUFFIX,kucoin.com
+  - DOMAIN-SUFFIX,huobi.com
+  - DOMAIN-SUFFIX,bitfinex.com

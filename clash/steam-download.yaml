@@ -1,0 +1,7 @@
+# Steam download
+payload:
+  # Steam 下载服务器（直连）
+  - DOMAIN-KEYWORD,steamcontent
+  - DOMAIN-SUFFIX,steamcontent.com
+  - DOMAIN-SUFFIX,steamserver.net
+  - DOMAIN-SUFFIX,steamcdn-a.akamaihd.net

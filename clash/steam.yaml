@@ -1,0 +1,7 @@
+# Steam
+payload:
+  # Steam 商店和社区（需要代理）
+  - DOMAIN-SUFFIX,steampowered.com
+  - DOMAIN-SUFFIX,steamcommunity.com
+  - DOMAIN-SUFFIX,steamgames.com
+  - DOMAIN-SUFFIX,steamusercontent.com

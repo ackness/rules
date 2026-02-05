@@ -1,0 +1,9 @@
+# CN Analysis
+payload:
+  # 国内分析统计服务 - 一般直连
+  - DOMAIN-SUFFIX,growingio.com
+  - DOMAIN-SUFFIX,adjust.com
+  - DOMAIN-SUFFIX,applovin.com
+  - DOMAIN-SUFFIX,sensorsdata.cn
+  - DOMAIN-SUFFIX,appsflyer.com
+  - DOMAIN-SUFFIX,shimo.im
