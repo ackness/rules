@@ -1,6 +1,6 @@
 # Clash Rules
 
-Clash 规则集合，包含各种分类的代理规则。
+Clash 分流规则集合，包含各种分类的代理规则。
 
 ## 规则列表
 
@@ -15,6 +15,11 @@ Clash 规则集合，包含各种分类的代理规则。
 | LAN.yaml | `https://raw.githubusercontent.com/ackness/rules/main/clash/LAN.yaml` | `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/LAN.yaml` |
 | steam.yaml | `https://raw.githubusercontent.com/ackness/rules/main/clash/steam.yaml` | `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/steam.yaml` |
 | steam-download.yaml | `https://raw.githubusercontent.com/ackness/rules/main/clash/steam-download.yaml` | `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/steam-download.yaml` |
+| ad.list | `https://raw.githubusercontent.com/ackness/rules/main/clash/ad.list` | `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/ad.list` |
+| cn_ip.list | `https://raw.githubusercontent.com/ackness/rules/main/clash/cn_ip.list` | `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/cn_ip.list` |
+| direct.list | `https://raw.githubusercontent.com/ackness/rules/main/clash/direct.list` | `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/direct.list` |
+| download.list | `https://raw.githubusercontent.com/ackness/rules/main/clash/download.list` | `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/download.list` |
+| telegram.list | `https://raw.githubusercontent.com/ackness/rules/main/clash/telegram.list` | `https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/telegram.list` |
 
 ## 规则说明
 
@@ -27,6 +32,11 @@ Clash 规则集合，包含各种分类的代理规则。
 - **LAN.yaml** - 本地网络规则
 - **steam.yaml** - Steam 相关规则
 - **steam-download.yaml** - Steam 下载加速规则
+- **ad.list** - 广告拦截规则
+- **cn_ip.list** - 中国云服务商 IP 段规则
+- **direct.list** - 直连规则
+- **download.list** - 下载工具规则（迅雷、BT、百度网盘等）
+- **telegram.list** - Telegram 服务规则
 
 ## 使用方式
 
@@ -36,28 +46,28 @@ Clash 规则集合，包含各种分类的代理规则。
 rule_providers:
   reject:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/reject.yaml"
     path: ./ruleset/reject.yaml
     interval: 86400
 
   ai:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/ai.yaml"
     path: ./ruleset/ai.yaml
     interval: 86400
 
   analysis:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/analysis.yaml"
     path: ./ruleset/analysis.yaml
     interval: 86400
 
   cloudflare:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/cloudflare.yaml"
     path: ./ruleset/cloudflare.yaml
     interval: 86400
@@ -71,29 +81,64 @@ rule_providers:
 
   crypto:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/crypto.yaml"
     path: ./ruleset/crypto.yaml
     interval: 86400
 
   lan:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/LAN.yaml"
     path: ./ruleset/LAN.yaml
     interval: 86400
 
   steam:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/steam.yaml"
     path: ./ruleset/steam.yaml
     interval: 86400
 
   steam-download:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/steam-download.yaml"
     path: ./ruleset/steam-download.yaml
+    interval: 86400
+
+  ad:
+    type: http
+    behavior: classical
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/ad.list"
+    path: ./ruleset/ad.list
+    interval: 86400
+
+  cn_ip:
+    type: http
+    behavior: classical
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/cn_ip.list"
+    path: ./ruleset/cn_ip.list
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: classical
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/direct.list"
+    path: ./ruleset/direct.list
+    interval: 86400
+
+  download:
+    type: http
+    behavior: classical
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/download.list"
+    path: ./ruleset/download.list
+    interval: 86400
+
+  telegram:
+    type: http
+    behavior: classical
+    url: "https://gh-proxy.com/raw.githubusercontent.com/ackness/rules/main/clash/telegram.list"
+    path: ./ruleset/telegram.list
     interval: 86400
 ```
