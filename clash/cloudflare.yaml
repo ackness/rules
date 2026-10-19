@@ -1,4 +1,7 @@
-# Cloudflare
+# Cloudflare domains and shared edge IPs; refreshed 2026-10-19.
+# https://github.com/v2fly/domain-list-community/blob/c16efa599b12a9e4b327949b3ed3f8ffff4b33c3/data/cloudflare
+# https://www.cloudflare.com/ips-v4 ; https://www.cloudflare.com/ips-v6
+# Shared hosting ranges also match unrelated Cloudflare customers.
 payload:
   - DOMAIN-SUFFIX,argotunnel.com
   - DOMAIN-SUFFIX,cf-ipfs.com
@@ -47,24 +50,49 @@ payload:
   - DOMAIN-SUFFIX,videodelivery.net
   - DOMAIN-SUFFIX,warp.plus
   - DOMAIN-SUFFIX,workers.dev
+  - DOMAIN-SUFFIX,browser.run
+  - DOMAIN-SUFFIX,cfargotunnel.com
+  - DOMAIN-SUFFIX,cfdata.org
+  - DOMAIN-SUFFIX,cfl.re
+  - DOMAIN-SUFFIX,cloudflare-esni.com
+  - DOMAIN-SUFFIX,cloudflare-terms-of-service-abuse.com
+  - DOMAIN-SUFFIX,cloudflare.app
+  - DOMAIN-SUFFIX,cloudflare.dev
+  - DOMAIN-SUFFIX,cloudflare.pay
+  - DOMAIN-SUFFIX,cloudflarebrowser.com
+  - DOMAIN-SUFFIX,cloudflarechallenge.com
+  - DOMAIN-SUFFIX,cloudflarecp.com
+  - DOMAIN-SUFFIX,cloudflarepartners.com
+  - DOMAIN-SUFFIX,cloudflareregistrar.com
+  - DOMAIN-SUFFIX,cloudflareresearch.com
+  - DOMAIN-SUFFIX,cloudflaresupport.com
+  - DOMAIN-SUFFIX,cloudflareworkers.com
+  - DOMAIN-SUFFIX,encryptedsni.com
+  - DOMAIN-SUFFIX,foundationdns.com
+  - DOMAIN-SUFFIX,foundationdns.net
+  - DOMAIN-SUFFIX,foundationdns.org
+  - DOMAIN-SUFFIX,imagedelivery.net
+  - DOMAIN-SUFFIX,isbgpsafeyet.com
+  - DOMAIN-SUFFIX,r2.dev
+  - IP-CIDR,173.245.48.0/20,no-resolve
   - IP-CIDR,103.21.244.0/22,no-resolve
   - IP-CIDR,103.22.200.0/22,no-resolve
   - IP-CIDR,103.31.4.0/22,no-resolve
-  - IP-CIDR,104.16.0.0/12,no-resolve
-  - IP-CIDR,108.162.192.0/18,no-resolve
-  - IP-CIDR,131.0.72.0/22,no-resolve
   - IP-CIDR,141.101.64.0/18,no-resolve
-  - IP-CIDR,162.158.0.0/15,no-resolve
-  - IP-CIDR,172.64.0.0/13,no-resolve
-  - IP-CIDR,173.245.48.0/20,no-resolve
-  - IP-CIDR,188.114.96.0/20,no-resolve
+  - IP-CIDR,108.162.192.0/18,no-resolve
   - IP-CIDR,190.93.240.0/20,no-resolve
+  - IP-CIDR,188.114.96.0/20,no-resolve
   - IP-CIDR,197.234.240.0/22,no-resolve
   - IP-CIDR,198.41.128.0/17,no-resolve
+  - IP-CIDR,162.158.0.0/15,no-resolve
+  - IP-CIDR,104.16.0.0/13,no-resolve
+  - IP-CIDR,104.24.0.0/14,no-resolve
+  - IP-CIDR,172.64.0.0/13,no-resolve
+  - IP-CIDR,131.0.72.0/22,no-resolve
   - IP-CIDR6,2400:cb00::/32,no-resolve
-  - IP-CIDR6,2405:8100::/32,no-resolve
-  - IP-CIDR6,2405:b500::/32,no-resolve
   - IP-CIDR6,2606:4700::/32,no-resolve
   - IP-CIDR6,2803:f800::/32,no-resolve
+  - IP-CIDR6,2405:b500::/32,no-resolve
+  - IP-CIDR6,2405:8100::/32,no-resolve
   - IP-CIDR6,2a06:98c0::/29,no-resolve
   - IP-CIDR6,2c0f:f248::/32,no-resolve

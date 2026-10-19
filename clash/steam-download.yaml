@@ -1,7 +1,25 @@
-# Steam download
+# Steam game/client content delivery; refreshed 2026-10-19.
+# https://github.com/v2fly/domain-list-community/blob/c16efa599b12a9e4b327949b3ed3f8ffff4b33c3/data/steam
+# No keyword matching or generic Steam store/static-asset domains.
 payload:
-  # Steam 下载服务器（直连）
-  - DOMAIN-KEYWORD,steamcontent
   - DOMAIN-SUFFIX,steamcontent.com
   - DOMAIN-SUFFIX,steamserver.net
-  - DOMAIN-SUFFIX,steamcdn-a.akamaihd.net
+  - DOMAIN-SUFFIX,edge.steam-dns.top.comcast.net
+  - DOMAIN-SUFFIX,steam.apac.qtlglb.com
+  - DOMAIN-SUFFIX,steam.eca.qtlglb.com
+  - DOMAIN-SUFFIX,steam.naeu.qtlglb.com
+  - DOMAIN-SUFFIX,steam.ru.qtlglb.com
+  - DOMAIN-SUFFIX,steam.cdn.on.net
+  - DOMAIN-SUFFIX,steam.cdn.orcon.net.nz
+  - DOMAIN-SUFFIX,steam.cdn.slingshot.co.nz
+  - DOMAIN-SUFFIX,steam.cdn.webra.ru
+  - DOMAIN,steampipe-kr.akamaized.net
+  - DOMAIN,steampipe-partner.akamaized.net
+  - DOMAIN,steampipe.akamaized.net
+  - DOMAIN-SUFFIX,client-update.queniuqe.com
+  - DOMAIN-SUFFIX,dl.steam.clngaa.com
+  - DOMAIN-SUFFIX,st.dl.bscstorage.net
+  - DOMAIN-SUFFIX,st.dl.eccdnx.com
+  - DOMAIN-SUFFIX,st.dl.pinyuncloud.com
+  - DOMAIN,lv.queniujq.cn
+  - DOMAIN,xz.pphimalayanrt.com

@@ -1,0 +1,63 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "network": [
+            "udp"
+          ]
+        },
+        {
+          "type": "logical",
+          "mode": "or",
+          "rules": [
+            {
+              "port": [
+                3478
+              ]
+            },
+            {
+              "port": [
+                5349
+              ]
+            },
+            {
+              "port": [
+                19302
+              ]
+            }
+          ]
+        },
+        {
+          "process_path_regex": [
+            "(?i)(?:^|[\\\\/])(chrome|msedge|firefox|brave|vivaldi|opera|ChatGPT|codex)\\.exe$"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "logical",
+      "mode": "and",
+      "rules": [
+        {
+          "network": [
+            "udp"
+          ]
+        },
+        {
+          "domain_keyword": [
+            "stun"
+          ]
+        },
+        {
+          "process_path_regex": [
+            "(?i)(?:^|[\\\\/])(chrome|msedge|firefox|brave|vivaldi|opera|ChatGPT|codex)\\.exe$"
+          ]
+        }
+      ]
+    }
+  ]
+}

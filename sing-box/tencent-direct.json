@@ -1,0 +1,30 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "process_name": [
+        "Weixin.exe",
+        "WeChat.exe",
+        "WeChatAppEx.exe",
+        "League of Legends.exe",
+        "LeagueClient.exe",
+        "LeagueClientUx.exe",
+        "LeagueClientUxRender.exe",
+        "wegame.exe",
+        "wegame_env.exe"
+      ]
+    },
+    {
+      "domain_suffix": [
+        "qq.com",
+        "tencent.com",
+        "tencent-cloud.net",
+        "weixin.com",
+        "wechat.com",
+        "weixinbridge.com",
+        "qpic.cn",
+        "qlogo.cn"
+      ]
+    }
+  ]
+}

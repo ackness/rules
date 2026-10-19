@@ -1,0 +1,237 @@
+# Mainland China game services (classical rules)
+# Reviewed: 2026-10-19
+# Source: v2fly/domain-list-community@daeeda75932087a3ab3b70f5649414761af10d6f
+# Cross-check: MetaCubeX/meta-rules-dat@7c782352439ce9ccaba53519ec816f82f52b6285
+# Adapted from category-games-cn and vendor lists; see licenses/v2fly-mit.txt.
+# Official portals supplement domestic game subdomains and resource hosts.
+# Domain routing does not cover every game session, IP-only endpoint, or UDP flow.
+payload:
+
+  # Tencent / QQ Games / WeChat Games
+  - DOMAIN-SUFFIX,game.qq.com
+  - DOMAIN-SUFFIX,qqgame.qq.com
+  - DOMAIN-SUFFIX,gamecenter.qq.com
+  - DOMAIN-SUFFIX,minigame.qq.com
+  - DOMAIN-SUFFIX,game.weixin.qq.com
+  - DOMAIN-SUFFIX,qqgameapp.com
+  - DOMAIN-SUFFIX,tencentstart.com
+  - DOMAIN-SUFFIX,start.qq.com
+
+  # League of Legends / VALORANT / Honor of Kings / Peacekeeper Elite / Delta Force CN
+  - DOMAIN-SUFFIX,lol.qq.com
+  - DOMAIN-SUFFIX,val.qq.com
+  - DOMAIN-SUFFIX,valm.qq.com
+  - DOMAIN-SUFFIX,pvp.qq.com
+  - DOMAIN-SUFFIX,gp.qq.com
+  - DOMAIN-SUFFIX,df.qq.com
+
+  # Dungeon & Fighter / CrossFire / QQ Speed / Moonlight Blade / Naruto CN
+  - DOMAIN-SUFFIX,dnf.qq.com
+  - DOMAIN-SUFFIX,dnfcity.qq.com
+  - DOMAIN-SUFFIX,cf.qq.com
+  - DOMAIN-SUFFIX,speed.qq.com
+  - DOMAIN-SUFFIX,wuxia.qq.com
+  - DOMAIN-SUFFIX,hyrz.qq.com
+
+  # QQ / WeChat sign-in and production MSDK authentication
+  # Confirmed in the official Milo SDK and MSDK server documentation.
+  - DOMAIN-SUFFIX,ptlogin2.qq.com
+  - DOMAIN,graph.qq.com
+  - DOMAIN,open.weixin.qq.com
+  - DOMAIN,ssl.captcha.qq.com
+  - DOMAIN,msdk.qq.com
+  - DOMAIN,ssl.msdk.qq.com
+  - DOMAIN,ap6.ssl.msdk.qq.com
+  - DOMAIN,ip6.ssl.msdk.qq.com
+  - DOMAIN,milo.qq.com
+  - DOMAIN-SUFFIX,gameact.qq.com
+  - DOMAIN,api.rail.tgp.qq.com
+  - DOMAIN-SUFFIX,gamesafe.qq.com
+  - DOMAIN,kf.qq.com
+
+  # Official DNF / CrossFire / QQ Speed / Moonlight Blade download links
+  - DOMAIN-SUFFIX,cdn-launcher.qq.com
+  - DOMAIN-SUFFIX,down.qq.com
+  - DOMAIN,dldir1.qq.com
+  - DOMAIN,down-update.qq.com
+  - DOMAIN,dlied4.myapp.com
+
+  # WeGame and domestic game resources
+  - DOMAIN-SUFFIX,wegame.com
+  - DOMAIN-SUFFIX,wegame.com.cn
+  - DOMAIN-SUFFIX,werepository.com.cn
+  - DOMAIN-SUFFIX,gtgres.com
+  - DOMAIN-SUFFIX,ffbuddy.com
+  - DOMAIN-SUFFIX,realcybertron.com
+  - DOMAIN-SUFFIX,wegame.gtimg.com
+  - DOMAIN-SUFFIX,game.gtimg.cn
+  - DOMAIN,ossweb-img.qq.com
+  - DOMAIN,img.msdk.qq.com
+  - DOMAIN,img.ssl.msdk.qq.com
+
+  # NetEase domestic portal / accounts / game services
+  - DOMAIN-SUFFIX,game.163.com
+  - DOMAIN-SUFFIX,reg.163.com
+  - DOMAIN-SUFFIX,gm.163.com
+  - DOMAIN-SUFFIX,gamepay.163.com
+  - DOMAIN-SUFFIX,ecard.163.com
+  - DOMAIN-SUFFIX,cbg.163.com
+  - DOMAIN-SUFFIX,ds.163.com
+  - DOMAIN-SUFFIX,cg.163.com
+  - DOMAIN-SUFFIX,nie.163.com
+  - DOMAIN-SUFFIX,nie.res.netease.com
+  - DOMAIN,adl.netease.com
+
+  # NetEase account security / MPay sign-in / UniSDK updates
+  # Confirmed in the domestic XYQ and YYSLS SDK scripts.
+  - DOMAIN-SUFFIX,mkey.163.com
+  - DOMAIN-SUFFIX,mima.163.com
+  - DOMAIN,mpay-web.netease.com
+  - DOMAIN,urswebzj.nosdn.127.net
+  - DOMAIN,unisdk.update.netease.com
+  - DOMAIN,protocol.unisdk.netease.com
+
+  # Domestic Loading Bay launcher and app download dispatch
+  - DOMAIN,loadingbaycn.webapp.163.com
+  - DOMAIN,app-down.fp.ps.netease.com
+
+  # Verified domestic game downloads / patches; avoid global gdl / gph suffixes.
+  - DOMAIN,d90.gdl.netease.com
+  - DOMAIN,h72.gdl.netease.com
+  - DOMAIN,a50.gdl.netease.com
+  - DOMAIN,u5.gdl.netease.com
+  - DOMAIN,xyq.gdl.netease.com
+  - DOMAIN,nsh.gdl.netease.com
+  - DOMAIN,nsh.gdl04.netease.com
+  - DOMAIN,nsh.gph.netease.com
+  - DOMAIN,nshlite.gdl.netease.com
+  - DOMAIN,nshlite.gph.netease.com
+
+  # Game-specific resources and domestic web game entry points
+  - DOMAIN,n.res.netease.com
+  - DOMAIN,n.v.netease.com
+  - DOMAIN,xyq.res.netease.com
+  - DOMAIN,yjwujian.res.netease.com
+  - DOMAIN,id5.res.netease.com
+  - DOMAIN,mrzh.res.netease.com
+  - DOMAIN,hy.res.netease.com
+  - DOMAIN,stzb.res.netease.com
+  - DOMAIN,party.res.netease.com
+  - DOMAIN,party.v.netease.com
+  - DOMAIN,res.nie.netease.com
+  - DOMAIN,webinput.nie.netease.com
+  - DOMAIN,yysls.fp.ps.netease.com
+  - DOMAIN,dwxcx.fp.ps.netease.com
+  - DOMAIN,stweb.fp.ps.netease.com
+  - DOMAIN,egg-shell.fp.ps.netease.com
+
+  # NetEase domestic game portals, confirmed on game.163.com
+  - DOMAIN-SUFFIX,xyq.163.com
+  - DOMAIN-SUFFIX,xy2.163.com
+  - DOMAIN-SUFFIX,xy3.163.com
+  - DOMAIN-SUFFIX,xy3d.163.com
+  - DOMAIN-SUFFIX,dhxy.163.com
+  - DOMAIN-SUFFIX,dh2.163.com
+  - DOMAIN-SUFFIX,tx3.163.com
+  - DOMAIN-SUFFIX,ty.163.com
+  - DOMAIN-SUFFIX,qnm.163.com
+  - DOMAIN-SUFFIX,yys.163.com
+  - DOMAIN-SUFFIX,id5.163.com
+  - DOMAIN-SUFFIX,mrzh.163.com
+  - DOMAIN-SUFFIX,hy.163.com
+  - DOMAIN-SUFFIX,mc.163.com
+  - DOMAIN-SUFFIX,party.163.com
+  - DOMAIN-SUFFIX,sky.163.com
+  - DOMAIN-SUFFIX,race.163.com
+  - DOMAIN-SUFFIX,marvelrivals.163.com
+  - DOMAIN-SUFFIX,marvelsnap.163.com
+  - DOMAIN-SUFFIX,ananta.163.com
+  - DOMAIN-SUFFIX,n.163.com
+  - DOMAIN-SUFFIX,stzb.163.com
+  - DOMAIN-SUFFIX,yjwujian.cn
+  - DOMAIN-SUFFIX,yysls.cn
+
+  # Blizzard CN / NetEase-operated Battle.net CN
+  - DOMAIN-SUFFIX,blizzard.cn
+  - DOMAIN-SUFFIX,battlenet.com.cn
+  - DOMAIN-SUFFIX,wow.res.netease.com
+
+  # miHoYo CN / Genshin / Honkai / Star Rail / Zenless Zone Zero / Tears of Themis
+  - DOMAIN-SUFFIX,mhystatic.com
+  - DOMAIN-SUFFIX,mhyurl.cn
+  - DOMAIN-SUFFIX,mihayo.com
+  - DOMAIN-SUFFIX,mihayou.com
+  - DOMAIN-SUFFIX,mihoyo.com
+  - DOMAIN-SUFFIX,mihoyocg.com
+  - DOMAIN-SUFFIX,mihoyogift.com
+  - DOMAIN-SUFFIX,mihoyomall.com
+  - DOMAIN-SUFFIX,miyoushe.com
+  - DOMAIN-SUFFIX,benghuai.com
+  - DOMAIN-SUFFIX,bh3.com
+  - DOMAIN-SUFFIX,bhsr.com
+  - DOMAIN-SUFFIX,themisweeps.com
+  - DOMAIN-SUFFIX,yuanshen.com
+  - DOMAIN-SUFFIX,juequling.com
+
+  # Kuro CN / Punishing: Gray Raven / Wuthering Waves
+  # Upstream entries marked !cn or ads are excluded.
+  - DOMAIN-SUFFIX,kurobbs.com
+  - DOMAIN-SUFFIX,kurogame.com
+  - DOMAIN-SUFFIX,kurogame.xyz
+  - DOMAIN-SUFFIX,kurogames.com
+  - DOMAIN-SUFFIX,aki-game.com
+  - DOMAIN-SUFFIX,aki-game2.com
+  - DOMAIN-SUFFIX,wutheringwaves.cn
+
+  # Seasun CN / JX / Snowbreak CN
+  - DOMAIN-SUFFIX,xoyo.com
+  - DOMAIN-SUFFIX,xoyocdn.com
+  - DOMAIN-SUFFIX,cbjq.com
+
+  # Perfect World CN game services
+  - DOMAIN-SUFFIX,laohu.com
+  - DOMAIN-SUFFIX,wanmei.com
+  - DOMAIN-SUFFIX,wmsj.cn
+  - DOMAIN-SUFFIX,wmupd.com
+
+  # Bilibili domestic games
+  - DOMAIN-SUFFIX,bilibiligame.cn
+  - DOMAIN-SUFFIX,bilibiligame.co
+  - DOMAIN-SUFFIX,bilibiligame.net
+  - DOMAIN-SUFFIX,biligame.co
+  - DOMAIN-SUFFIX,biligame.com
+  - DOMAIN-SUFFIX,biligame.net
+
+  # Lingxi / Jiuyou / Tiancity / Changyou / Shengqu
+  - DOMAIN-SUFFIX,9game.cn
+  - DOMAIN-SUFFIX,aligames.com
+  - DOMAIN-SUFFIX,lingxigames.com
+  - DOMAIN-SUFFIX,tiancity.com
+  - DOMAIN-SUFFIX,tiancitycdn.com
+  - DOMAIN-SUFFIX,changyou.com
+  - DOMAIN-SUFFIX,cy.com
+  - DOMAIN-SUFFIX,sdo.com
+  - DOMAIN-SUFFIX,shengqugames.com
+  - DOMAIN-SUFFIX,zjshulong.com
+
+  # Duoyi / Papergames CN / Bluepoch / Yoka
+  - DOMAIN-SUFFIX,duoyi.com
+  - DOMAIN-SUFFIX,duoyigroup.cn
+  - DOMAIN-SUFFIX,duoyiwangluo.com
+  - DOMAIN-SUFFIX,ygduoyi.com
+  - DOMAIN-SUFFIX,nikkigames.cn
+  - DOMAIN-SUFFIX,nikkigames.com.cn
+  - DOMAIN-SUFFIX,papegames.cn
+  - DOMAIN-SUFFIX,papegames.com
+  - DOMAIN-SUFFIX,sl916.com
+  - DOMAIN-SUFFIX,sanguosha.com
+  - DOMAIN-SUFFIX,yokaverse.com
+
+  # User-defined League of Legends and WeGame DIRECT process exceptions
+  # Apply before browser/AI UDP restrictions; process detection is required.
+  - PROCESS-NAME,League of Legends.exe
+  - PROCESS-NAME,LeagueClient.exe
+  - PROCESS-NAME,LeagueClientUx.exe
+  - PROCESS-NAME,LeagueClientUxRender.exe
+  - PROCESS-NAME,wegame.exe
+  - PROCESS-NAME,wegame_env.exe

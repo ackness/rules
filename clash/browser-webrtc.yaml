@@ -1,0 +1,8 @@
+# Supplemental STUN/TURN guard for recognized Windows browser and AI client processes.
+# Use REJECT before direct/domain/IP routing. Ordinary HTTP/3 UDP is preserved.
+# Arbitrary STUN/TURN ports are NOT covered: use disable_non_proxied_udp in browsers.
+# Only captured traffic is filtered; this provider alone cannot prevent WebRTC IP exposure.
+# Native Tencent/game processes are excluded. Some browser calls may fall back to TCP or fail.
+payload:
+  - AND,((NETWORK,UDP),(OR,((DST-PORT,3478),(DST-PORT,5349),(DST-PORT,19302))),(PROCESS-NAME-REGEX,(?i)^(chrome|msedge|firefox|brave|vivaldi|opera|ChatGPT|codex)\.exe$))
+  - AND,((NETWORK,UDP),(DOMAIN-KEYWORD,stun),(PROCESS-NAME-REGEX,(?i)^(chrome|msedge|firefox|brave|vivaldi|opera|ChatGPT|codex)\.exe$))

@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix": [
+        "playartifact.com",
+        "s.team",
+        "steam.tv",
+        "steam-api.com",
+        "steam-chat.com",
+        "steamcommunity.com",
+        "steamconnecttest.com",
+        "steamdeck.com",
+        "steamgames.com",
+        "steampowered.com",
+        "steamstatic.com",
+        "steamusercontent.com",
+        "underlords.com",
+        "valve.net",
+        "valvesoftware.com"
+      ]
+    },
+    {
+      "domain": [
+        "steamcommunity-a.akamaihd.net.edgesuite.net",
+        "a4e8s8k3.map2.ssl.hwcdn.net",
+        "f3b7q2p3.ssl.hwcdn.net",
+        "steambroadcast.akamaized.net",
+        "steamcdn-a.akamaihd.net",
+        "steamcommunity-a.akamaihd.net",
+        "steammobile.akamaized.net",
+        "steamstore-a.akamaihd.net",
+        "steamusercontent-a.akamaihd.net",
+        "steamuserimages-a.akamaihd.net",
+        "steamvideo-a.akamaihd.net",
+        "steamcloudsweden.blob.core.windows.net",
+        "steamugcquincy.blob.core.windows.net"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "ad": {
+    "file": "clash/ad.list",
+    "behavior": "classical"
+  },
+  "ai": {
+    "file": "clash/ai.yaml",
+    "behavior": "classical"
+  },
+  "analysis": {
+    "file": "clash/analysis.yaml",
+    "behavior": "classical"
+  },
+  "apple-cn-domain": {
+    "file": "clash/apple-cn-domain.yaml",
+    "behavior": "domain"
+  },
+  "apple-domain": {
+    "file": "clash/apple-domain.yaml",
+    "behavior": "domain"
+  },
+  "browser-webrtc": {
+    "file": "clash/browser-webrtc.yaml",
+    "behavior": "classical"
+  },
+  "claude": {
+    "file": "clash/claude.yaml",
+    "behavior": "classical"
+  },
+  "cloudflare": {
+    "file": "clash/cloudflare.yaml",
+    "behavior": "classical"
+  },
+  "cn-analysis": {
+    "file": "clash/cn-analysis.yaml",
+    "behavior": "classical"
+  },
+  "cn-apps": {
+    "file": "clash/cn-apps.yaml",
+    "behavior": "classical"
+  },
+  "cn-domain": {
+    "file": "clash/cn-domain.yaml",
+    "behavior": "domain"
+  },
+  "cn-games": {
+    "file": "clash/cn-games.yaml",
+    "behavior": "classical"
+  },
+  "cn-ip": {
+    "file": "clash/cn-ip.list",
+    "behavior": "classical"
+  },
+  "cn-ipcidr": {
+    "file": "clash/cn-ipcidr.yaml",
+    "behavior": "ipcidr"
+  },
+  "crypto": {
+    "file": "clash/crypto.yaml",
+    "behavior": "classical"
+  },
+  "direct": {
+    "file": "clash/direct.list",
+    "behavior": "classical"
+  },
+  "disney-domain": {
+    "file": "clash/disney-domain.yaml",
+    "behavior": "domain"
+  },
+  "download": {
+    "file": "clash/download.list",
+    "behavior": "classical"
+  },
+  "gits-domain": {
+    "file": "clash/gits-domain.yaml",
+    "behavior": "domain"
+  },
+  "google-domain": {
+    "file": "clash/google-domain.yaml",
+    "behavior": "domain"
+  },
+  "google-ipcidr": {
+    "file": "clash/google-ipcidr.yaml",
+    "behavior": "ipcidr"
+  },
+  "hbo-domain": {
+    "file": "clash/hbo-domain.yaml",
+    "behavior": "domain"
+  },
+  "lan": {
+    "file": "clash/lan.yaml",
+    "behavior": "classical"
+  },
+  "netflix-domain": {
+    "file": "clash/netflix-domain.yaml",
+    "behavior": "domain"
+  },
+  "netflix-ipcidr": {
+    "file": "clash/netflix-ipcidr.yaml",
+    "behavior": "ipcidr"
+  },
+  "primevideo-domain": {
+    "file": "clash/primevideo-domain.yaml",
+    "behavior": "domain"
+  },
+  "private-domain": {
+    "file": "clash/private-domain.yaml",
+    "behavior": "domain"
+  },
+  "private-ipcidr": {
+    "file": "clash/private-ipcidr.yaml",
+    "behavior": "ipcidr"
+  },
+  "proxy-domain": {
+    "file": "clash/proxy-domain.yaml",
+    "behavior": "domain"
+  },
+  "reject": {
+    "file": "clash/reject.yaml",
+    "behavior": "domain"
+  },
+  "socialmedia-domain": {
+    "file": "clash/socialmedia-domain.list",
+    "behavior": "domain"
+  },
+  "spotify-domain": {
+    "file": "clash/spotify-domain.yaml",
+    "behavior": "domain"
+  },
+  "steam-download": {
+    "file": "clash/steam-download.yaml",
+    "behavior": "classical"
+  },
+  "steam": {
+    "file": "clash/steam.yaml",
+    "behavior": "classical"
+  },
+  "telegram": {
+    "file": "clash/telegram.list",
+    "behavior": "classical"
+  },
+  "tencent-direct": {
+    "file": "clash/tencent-direct.yaml",
+    "behavior": "classical"
+  },
+  "youtube-domain": {
+    "file": "clash/youtube-domain.yaml",
+    "behavior": "domain"
+  }
+}

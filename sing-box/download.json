@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "process_name": [
+        "aria2c.exe",
+        "fdm.exe",
+        "Folx.exe",
+        "NetTransport.exe",
+        "Thunder.exe",
+        "Transmission.exe",
+        "uTorrent.exe",
+        "WebTorrent.exe",
+        "WebTorrent Helper.exe",
+        "DownloadService.exe",
+        "Weiyun.exe",
+        "baidunetdisk.exe",
+        "aria2c",
+        "transmission-daemon",
+        "transmission-qt.exe",
+        "qbittorrent.exe",
+        "qbittorrent",
+        "BitComet.exe",
+        "IDMan.exe",
+        "NeatDM.exe"
+      ]
+    }
+  ]
+}

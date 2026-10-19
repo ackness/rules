@@ -1,0 +1,10 @@
+[tools]
+bun = "1.4.2"
+
+[tasks.build]
+description = "Generate sing-box rules from the canonical Clash catalog"
+run = "bun scripts/build-singbox.mjs"
+
+[tasks.check]
+description = "Validate the catalog and reject stale sing-box output"
+run = "bun scripts/build-singbox.mjs --check"

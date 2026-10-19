@@ -1,4 +1,4 @@
-# Analysis
+# Local routing exception, reviewed 2026-10-19.
+# googleapis.cn is a routing workaround, not an analytics service.
 payload:
-  # Google APIs (国内被干扰)
   - DOMAIN-SUFFIX,googleapis.cn

@@ -1,0 +1,21 @@
+# Native Tencent messaging and mainland-China gaming exceptions.
+# Use DIRECT before browser/AI UDP restrictions; this is a local routing policy.
+# Process rules require working process detection and do not bypass the TUN stack.
+payload:
+  - PROCESS-NAME,Weixin.exe
+  - PROCESS-NAME,WeChat.exe
+  - PROCESS-NAME,WeChatAppEx.exe
+  - PROCESS-NAME,League of Legends.exe
+  - PROCESS-NAME,LeagueClient.exe
+  - PROCESS-NAME,LeagueClientUx.exe
+  - PROCESS-NAME,LeagueClientUxRender.exe
+  - PROCESS-NAME,wegame.exe
+  - PROCESS-NAME,wegame_env.exe
+  - DOMAIN-SUFFIX,qq.com
+  - DOMAIN-SUFFIX,tencent.com
+  - DOMAIN-SUFFIX,tencent-cloud.net
+  - DOMAIN-SUFFIX,weixin.com
+  - DOMAIN-SUFFIX,wechat.com
+  - DOMAIN-SUFFIX,weixinbridge.com
+  - DOMAIN-SUFFIX,qpic.cn
+  - DOMAIN-SUFFIX,qlogo.cn
