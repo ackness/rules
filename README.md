@@ -218,7 +218,7 @@ rules:
 ## 使用说明
 
 - `crypto` 已承接框架中的 30 条内联规则，并补回原运行规则集的 30 条明确域名；去重后本次为 450 条。Hyperliquid、Unit、Axiom、Privy 登录和 RPC 按服务域名分流；Privy 等共享主机也会影响其他使用它们的应用。同组不保证节点提供单一固定出口 IP。
-- `claude` now contains only service-specific domains and dedicated client processes. Shared payment, generic CDN, fonts, storage, telemetry, keyword matches and unverified historical IP/ASN ranges are removed. Those requests follow ordinary service, advertising or general web policies; removal here does not force them to DIRECT. Process rules apply to all connections made by matching clients. `claude.app` is retained for Desktop live previews, as listed in the [official network requirements](https://code.claude.com/docs/en/desktop#network-access-requirements).
+- `claude` preserves historical service and shared dependency domains by explicit user preference. These also route other applications through Claude. Vendor suffixes replace unrestricted sentry/datadog/sift keywords; unverified IP/ASN ranges stay excluded. Domain ownership and exhaustive runtime dependency coverage are not guaranteed.
 - Claude 组使用手动选择的具体节点，不包含 `DIRECT` 或会自动切换的嵌套组；无节点时使用 `REJECT`。Claude 规则优先于通用直连与广告规则，其 UDP 单独拒绝。节点被删除、订阅刷新或选择缓存重置后，应重新核对出口；双栈或服务端出口轮换无法仅靠规则消除。
 - 隐私与性能采用分层方案：Chrome 的 `WebRtcIPHandling`、Edge 的 `WebRtcLocalhostIpHandling` 设为 `disable_non_proxied_udp`，限制未代理的 WebRTC UDP；普通网页 QUIC 不受这项策略直接限制。浏览器通话可能改走 TCP、增加延迟或失败。参见 [Chromium 策略定义](https://github.com/chromium/chromium/blob/main/components/policy/resources/templates/policy_definitions/WebRtc/WebRtcIPHandling.yaml) 和 [Edge 策略](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/webrtclocalhostiphandling)。
 - `browser-webrtc` 仅补充拦截识别到的浏览器进程使用常见 STUN/TURN UDP 端口或含 `stun` 的域名；任意端口、未识别进程、未进入 Mihomo 的连接均不由它兜底。TUN 关闭时尤其需要浏览器策略；mDNS 隐藏局域网地址不等于隐藏公网地址。规则必须放在通用直连规则前，实际生效还应检查浏览器策略和 ICE 候选地址。
@@ -250,7 +250,7 @@ The cn-ipcidr geographic list is different from the historical cn-ip.list compan
 
 The canonical sources are clash/ plus catalog.json. Run mise run build to regenerate all 37 sing-box/*.json files, then mise run check to detect stale generated content. Publish both directories together. Do not edit generated JSON directly. This uses Bun's built-in YAML parser and needs no package installation.
 
-Shared challenges.cloudflare.com verification is excluded from claude.yaml: assigning it to a service-specific node can break unrelated websites. Clients should route it with their general web policy; domain rules cannot infer which website embedded a challenge. The fq-cf-workers compatibility exception also protects clients using older published snapshots.
+Shared challenges.cloudflare.com verification follows Claude along with the restored dependency domains. Clients must remove the old general-web challenge exception. This policy affects other sites using the shared host and cannot distinguish the embedding website.
 
 The generated-file inventory is tracked in sing-box-generated.json. After deleting or renaming a category, build removes only obsolete files recorded in that inventory and updates it. Keep the inventory when changing the catalog and commit its generated update. Unknown JSON files are preserved and rejected by build/check; move unrelated JSON elsewhere before publishing. Check never creates or updates files.
 

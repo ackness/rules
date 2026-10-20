@@ -4,23 +4,56 @@
     {
       "domain_suffix": [
         "anthropic.com",
+        "anthropic.com.cn",
+        "antspace.dev",
         "clau.de",
         "claude.ai",
         "claude.app",
         "claude.com",
-        "claude.dev",
-        "claudeusercontent.com",
+        "claude.new",
+        "claude.site",
         "claudemcpclient.com",
         "claudemcpcontent.com",
-        "claudepages.dev"
-      ]
-    },
-    {
-      "domain": [
-        "anthropic-com.ghost.io",
-        "anthropic.auth0.com",
-        "anthropic.com.cdn.cloudflare.net",
-        "servd-anthropic-website.b-cdn.net"
+        "claudepages.dev",
+        "claudestudio.com",
+        "claudeusercontent.com",
+        "modelcontextprotocol.com",
+        "modelcontextprotocol.io",
+        "modelcontextprotocol.net",
+        "modelcontextprotocol.org",
+        "anthropic.team",
+        "amplitude.com",
+        "chatbotclaude.com",
+        "claude.dev",
+        "events.statsigapi.net",
+        "featuregates.org",
+        "intercom.io",
+        "intercomcdn.com",
+        "interface.feedback",
+        "lcicat.org",
+        "lcicollections.org",
+        "mcpservertest.online",
+        "muthos.com",
+        "segment.com",
+        "segment.io",
+        "sentry.io",
+        "sillylittleguy.org",
+        "statsigapi.net",
+        "stripe.com",
+        "stripe.network",
+        "withpersona.com",
+        "featureassets.org",
+        "assetsconfigcdn.org",
+        "prodregistryv2.org",
+        "beyondwickedmapping.org",
+        "datadoghq.com",
+        "datadoghq.eu",
+        "browser-intake-datadoghq.com",
+        "browser-intake-datadoghq.eu",
+        "browser-intake-us3-datadoghq.com",
+        "browser-intake-us5-datadoghq.com",
+        "datadoghq-browser-agent.com",
+        "sift.com"
       ]
     },
     {
@@ -30,6 +63,28 @@
         "claude",
         "claude.exe",
         "cowork-svc.exe"
+      ]
+    },
+    {
+      "domain": [
+        "anthropic-com.ghost.io",
+        "anthropic.auth0.com",
+        "anthropic.com.cdn.cloudflare.net",
+        "api.statsig.com",
+        "browser-intake-us5-datadoghq.com",
+        "cdn.growthbook.io",
+        "cdn.usefathom.com",
+        "challenges.cloudflare.com",
+        "servd-anthropic-website.b-cdn.net",
+        "storage.googleapis.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "cdnjs.cloudflare.com",
+        "cdn.jsdelivr.net",
+        "cdn.tailwindcss.com",
+        "code.jquery.com",
+        "unpkg.com",
+        "api.statsigcdn.com"
       ]
     }
   ]
