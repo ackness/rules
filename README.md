@@ -250,7 +250,7 @@ The cn-ipcidr geographic list is different from the historical cn-ip.list compan
 
 The canonical sources are clash/ plus catalog.json. Run mise run build to regenerate all 37 sing-box/*.json files, then mise run check to detect stale generated content. Publish both directories together. Do not edit generated JSON directly. This uses Bun's built-in YAML parser and needs no package installation.
 
-Shared challenges.cloudflare.com verification follows Claude along with the restored dependency domains. Clients must remove the old general-web challenge exception. This policy affects other sites using the shared host and cannot distinguish the embedding website.
+challenges.cloudflare.com is deliberately absent from claude: the verification widget must share the embedding site's egress IP, which a per-destination ruleset cannot express. Consuming configs pin it to their general web selector before the Claude ruleset.
 
 The generated-file inventory is tracked in sing-box-generated.json. After deleting or renaming a category, build removes only obsolete files recorded in that inventory and updates it. Keep the inventory when changing the catalog and commit its generated update. Unknown JSON files are preserved and rejected by build/check; move unrelated JSON elsewhere before publishing. Check never creates or updates files.
 

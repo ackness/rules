@@ -1,5 +1,7 @@
 # Claude session and dependency routing, restored by user preference.
 # Shared dependency domains also route other applications through Claude.
+# challenges.cloudflare.com is deliberately absent: the verification widget must
+# share the embedding site's egress, so consuming configs pin it separately.
 # Historical domain entries preserve coverage; they are not all verified first-party domains.
 # Vendor suffixes replace unrestricted keyword matches; unverified IP/ASN ranges stay excluded.
 # Datadog: https://docs.datadoghq.com/real_user_monitoring/guide/proxy-rum-data/
@@ -36,7 +38,6 @@ payload:
   - DOMAIN,browser-intake-us5-datadoghq.com
   - DOMAIN,cdn.growthbook.io
   - DOMAIN,cdn.usefathom.com
-  - DOMAIN,challenges.cloudflare.com
   - DOMAIN,servd-anthropic-website.b-cdn.net
   - DOMAIN,storage.googleapis.com
   - DOMAIN-SUFFIX,anthropic.team
