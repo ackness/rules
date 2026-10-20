@@ -53,7 +53,25 @@ for (const file of fs.readdirSync(path.join(root, 'clash')).filter(file => /\.(y
   if (!expectedFiles.has(file)) throw Error('Rule file missing from catalog: ' + file);
 }
 let total = 0;
-fs.mkdirSync(path.join(root, 'sing-box'), { recursive: true });
+const outputDir = path.join(root, 'sing-box');
+const manifestFile = path.join(root, 'sing-box-generated.json');
+const generatedFiles = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
+const validName = name => /^[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(name);
+function generatedPath(file) {
+  const target = path.resolve(outputDir, file);
+  if (!validName(file) || path.dirname(target) !== outputDir) throw Error('Unsafe generated-file path: ' + file);
+  return target;
+}
+if (!Array.isArray(generatedFiles) || !generatedFiles.every(file => typeof file === 'string' && validName(file)) || new Set(generatedFiles).size !== generatedFiles.length) throw Error('Invalid generated-file manifest');
+const outputFiles = Object.keys(catalog).map(name => name + '.json');
+if (!outputFiles.every(validName)) throw Error('Invalid catalog category name');
+const expectedOutputs = new Set(outputFiles);
+for (const file of fs.existsSync(outputDir) ? fs.readdirSync(outputDir).filter(file => file.endsWith('.json')) : []) {
+  if (!expectedOutputs.has(file) && (check || !generatedFiles.includes(file))) throw Error('Unexpected generated directory JSON: ' + file);
+}
+if (check) {
+  if (JSON.stringify(generatedFiles) !== JSON.stringify(outputFiles)) throw Error('Stale generated-file manifest');
+} else fs.mkdirSync(outputDir, { recursive: true });
 for (const [name, entry] of Object.entries(catalog)) {
   const text = fs.readFileSync(path.join(root, entry.file), 'utf8');
   const payload = entry.file.endsWith('.yaml') ? Bun.YAML.parse(text)?.payload : text.split(/\r?\n/).map(line => line.trim()).filter(line => line && !line.startsWith('#'));
@@ -70,9 +88,13 @@ for (const [name, entry] of Object.entries(catalog)) {
   }
   const rules = [...groups].map(([key, values]) => ({ [key]: [...new Set(values)] })).concat(logical);
   const output = JSON.stringify({ version: 3, rules }, null, 2) + '\n';
-  const file = path.join(root, 'sing-box', name + '.json');
+  const file = generatedPath(name + '.json');
   if (check) { if (!fs.existsSync(file) || fs.readFileSync(file, 'utf8') !== output) throw Error('Stale generated rules: ' + name); }
   else fs.writeFileSync(file, output);
   total += payload.length;
+}
+if (!check) {
+  for (const file of generatedFiles.filter(file => !expectedOutputs.has(file))) fs.rmSync(generatedPath(file), { force: true });
+  fs.writeFileSync(manifestFile, JSON.stringify(outputFiles, null, 2) + '\n');
 }
 console.log(`${check ? 'Checked' : 'Generated'} ${Object.keys(catalog).length} categories (${total} source entries).`);

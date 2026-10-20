@@ -1,93 +1,25 @@
-# Claude session routing migrated from fq-cf-workers/src/claude.yaml on 2026-10-19.
-# Preserve existing routing behavior; shared auth/telemetry/storage/payment services are intentional.
-# Not a minimal official-domain allowlist and not a guarantee against account restrictions.
-# See README.md for shared-service impact and rule ordering.
-# Baseline includes VPSDance/ai-proxy-rules; MIT license retained in licenses/vpsdance-mit.txt.
+# Service-specific Claude routing. Shared infrastructure follows general policies.
+# Do not add generic CDN, payment, telemetry domains or keyword matches here.
+# Desktop process rules cover shared dependencies only for dedicated Claude clients.
+# Historical unverified domains and IP/ASN allocations are intentionally omitted.
+# Baseline attribution: licenses/vpsdance-mit.txt.
 payload:
-  # Core Domains
   - DOMAIN-SUFFIX,anthropic.com
-  - DOMAIN-SUFFIX,anthropic.com.cn
-  - DOMAIN-SUFFIX,antspace.dev
   - DOMAIN-SUFFIX,clau.de
   - DOMAIN-SUFFIX,claude.ai
   - DOMAIN-SUFFIX,claude.app
   - DOMAIN-SUFFIX,claude.com
-  - DOMAIN-SUFFIX,claude.new
-  - DOMAIN-SUFFIX,claude.site
+  - DOMAIN-SUFFIX,claude.dev
+  - DOMAIN-SUFFIX,claudeusercontent.com
   - DOMAIN-SUFFIX,claudemcpclient.com
   - DOMAIN-SUFFIX,claudemcpcontent.com
   - DOMAIN-SUFFIX,claudepages.dev
-  - DOMAIN-SUFFIX,claudestudio.com
-  - DOMAIN-SUFFIX,claudeusercontent.com
-  - DOMAIN-SUFFIX,modelcontextprotocol.com
-  - DOMAIN-SUFFIX,modelcontextprotocol.io
-  - DOMAIN-SUFFIX,modelcontextprotocol.net
-  - DOMAIN-SUFFIX,modelcontextprotocol.org
-
-  # Desktop / CLI Processes
+  - DOMAIN,anthropic-com.ghost.io
+  - DOMAIN,anthropic.auth0.com
+  - DOMAIN,anthropic.com.cdn.cloudflare.net
+  - DOMAIN,servd-anthropic-website.b-cdn.net
   - PROCESS-NAME,Claude
   - PROCESS-NAME,Claude.exe
   - PROCESS-NAME,claude
   - PROCESS-NAME,claude.exe
   - PROCESS-NAME,cowork-svc.exe
-
-  # Historical network allocation retained from the upstream policy; domain rules remain primary.
-  - IP-CIDR,160.79.104.0/21,no-resolve
-  - IP-CIDR6,2607:6bc0::/32,no-resolve
-  - IP-ASN,399358,no-resolve
-
-  # Auth, CDN, Telemetry, Verification & Billing Anti-Fraud
-  - DOMAIN,anthropic-com.ghost.io
-  - DOMAIN,anthropic.auth0.com
-  - DOMAIN,anthropic.com.cdn.cloudflare.net
-  - DOMAIN,api.statsig.com
-  - DOMAIN,browser-intake-us5-datadoghq.com
-  - DOMAIN,cdn.growthbook.io
-  - DOMAIN,cdn.usefathom.com
-  - DOMAIN,challenges.cloudflare.com
-  - DOMAIN,servd-anthropic-website.b-cdn.net
-  - DOMAIN,storage.googleapis.com
-  - DOMAIN-SUFFIX,anthropic.team
-  - DOMAIN-SUFFIX,amplitude.com
-  - DOMAIN-SUFFIX,chatbotclaude.com
-  - DOMAIN-SUFFIX,claude.dev
-  - DOMAIN-SUFFIX,events.statsigapi.net
-  - DOMAIN-SUFFIX,featuregates.org
-  - DOMAIN-SUFFIX,intercom.io
-  - DOMAIN-SUFFIX,intercomcdn.com
-  - DOMAIN-SUFFIX,interface.feedback
-  - DOMAIN-SUFFIX,lcicat.org
-  - DOMAIN-SUFFIX,lcicollections.org
-  - DOMAIN-SUFFIX,mcpservertest.online
-  - DOMAIN-SUFFIX,muthos.com
-  - DOMAIN-SUFFIX,segment.com
-  - DOMAIN-SUFFIX,segment.io
-  - DOMAIN-SUFFIX,sentry.io
-  - DOMAIN-SUFFIX,sillylittleguy.org
-  - DOMAIN-SUFFIX,statsigapi.net
-  - DOMAIN-SUFFIX,stripe.com
-  - DOMAIN-SUFFIX,stripe.network
-  - DOMAIN-SUFFIX,withpersona.com
-  - DOMAIN-KEYWORD,datadog
-  - DOMAIN-KEYWORD,sentry
-  - DOMAIN-KEYWORD,sift
-
-  # Optional Artifact dependencies documented by Claude Code network requirements.
-  # Exact shared hosts also route other applications' requests through this policy.
-  # https://code.claude.com/docs/en/network-config#third-party-hosts-for-artifact-fonts-and-libraries
-  - DOMAIN,fonts.googleapis.com
-  - DOMAIN,fonts.gstatic.com
-  - DOMAIN,cdnjs.cloudflare.com
-  - DOMAIN,cdn.jsdelivr.net
-  - DOMAIN,cdn.tailwindcss.com
-  - DOMAIN,code.jquery.com
-  - DOMAIN,unpkg.com
-
-  # Statsig documents rotating SDK endpoints; inclusion is preventive, not evidence
-  # that every Claude release contacts all of them. Do not include the shared DoH host.
-  # https://docs.statsig.com/infrastructure/statsig_domains
-  - DOMAIN,api.statsigcdn.com
-  - DOMAIN-SUFFIX,featureassets.org
-  - DOMAIN-SUFFIX,assetsconfigcdn.org
-  - DOMAIN-SUFFIX,prodregistryv2.org
-  - DOMAIN-SUFFIX,beyondwickedmapping.org
