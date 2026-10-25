@@ -71,6 +71,10 @@
     "file": "clash/download.list",
     "behavior": "classical"
   },
+  "download-mirrors": {
+    "file": "clash/download-mirrors.yaml",
+    "behavior": "classical"
+  },
   "gits-domain": {
     "file": "clash/gits-domain.yaml",
     "behavior": "domain"

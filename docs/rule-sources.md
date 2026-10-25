@@ -2,6 +2,24 @@
 
 此文件记录来源、筛选理由和各轮维护快照；配置用法见 [README](../README.md)。
 
+## 下载镜像独立分类（2026-10-25）
+
+新增 `clash/download-mirrors.yaml`，在 `catalog.json` 登记并生成 `sing-box/download-mirrors.json`。只列明确镜像主机或镜像专用后缀，供 `DIRECT` 使用；不合并原站、下载进程、泛关键词或云平台共享后缀。
+
+- GitHub：[GH-Proxy 文档](https://gh-proxy.com/docs/quick-start)、[ghproxy.net](https://ghproxy.net/)、[ghfast.top](https://ghfast.top/)、[gh.llkk.cc](https://gh.llkk.cc/)、[Akams](https://github.akams.cn/)。`gh-proxy.org` 当前首页跳转到 `.com`，保留两者；`ghproxy.net` 也是框架现有镜像端点。Akams 可能选择其他服务节点，实际节点仍须单独收录。
+- Hugging Face：[HF-Mirror 自述](https://hf-mirror.com/)确认 `.com` 镜像端点；没有按名称相似性加入其他顶级域名。原站 HF、Xet 及其共享存储不归入此分类。
+- GitHub/npm 内容：[jsDelivr 项目](https://github.com/jsdelivr/jsdelivr)说明 `/gh/`、`/npm/` 用途；列入 `cdn.jsdelivr.net` 和框架已配置的 `testingcf.jsdelivr.net`、`gcore.jsdelivr.net`，没有泛匹配整个 `jsdelivr.net`。
+- 高校软件源：[CERNET](https://mirrors.cernet.edu.cn/)、[TUNA](https://mirrors.tuna.tsinghua.edu.cn/)、[TUNA PyPI](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)、[USTC](https://mirrors.ustc.edu.cn/help/)、[SJTUG](https://mirrors.sjtug.sjtu.edu.cn/)、[BFSU](https://mirrors.bfsu.edu.cn/)、[NJU](https://mirrors.nju.edu.cn/)、[SUSTech](https://mirrors.sustech.edu.cn/)、[SDU](https://mirrors.sdu.edu.cn/)。TUNA/BFSU 的 IPv4、IPv6 主机按首页列出的地址单独加入；学校根域不匹配。
+- 云厂商软件源：[阿里云](https://developer.aliyun.com/mirror/)、[Maven](https://maven.aliyun.com/mvn/guide)、[腾讯](https://mirrors.cloud.tencent.com/)、[华为云](https://mirrors.huaweicloud.com/)、[华为仓库](https://repo.huaweicloud.com/)。只匹配镜像服务子域。
+- 包仓库：[npmmirror](https://npmmirror.com/)、[RsProxy](https://rsproxy.cn/)、[Goproxy.cn](https://goproxy.cn/)。RsProxy 抽查下载接口返回 307 到 `lf3-static.rsproxy.cn`，由专用 `rsproxy.cn` 后缀覆盖。
+- 容器镜像：[DaoCloud 自述](https://github.com/DaoCloud/public-image-mirror)中的 `m.daocloud.io` 及其镜像子域、[毫秒镜像](https://1ms.run/)公开列出的 `docker.1ms.run`；原始 Docker Hub、GHCR、GCR 不归入此分类。
+
+本机禁用显式 HTTP 代理的 HEAD 抽查：`ghfast.top`、`gh-proxy.com`、`github.akams.cn`、`registry.npmmirror.com` 返回 200，`gh-proxy.org` 返回 301；`ghproxy.net`、`gh.llkk.cc` 和 HF-Mirror 请求出现超时，不能据此宣称它们在本机已可直连下载。`ui.ghproxy.cc` 证书过期、`hub.gitmirror.com` 无法解析，本轮未加入；也未按未验证导航站批量导入镜像。HEAD、首页自述和规则匹配各自只能证明对应层面的结果，不代表大文件下载速度或所有节点可用。
+
+验证结果：34 条规则生成 Clash/Sing-Box 一致的域名边界；`mise run build` / `mise run check` 通过。框架相关 16 项测试及类型检查通过，覆盖最终路由顺序、自定义策略覆盖、屏蔽和本地兼容脚本。隔离 Mihomo v1.19.32 分别加载主订阅 36 个 provider、Builtin 17 个 provider，每种配置均通过 60 个镜像命中及 38 个非镜像排除样例，另断言 GitHub / HF 原站仍走原服务规则。测试仅将策略出口替换成本地响应端点，不向样例网站发送业务请求，不改动活动客户端。Sing-Box 已验证生成、源规则匹配及配置结构，未运行其原生内核。
+
+后续维护：从服务方文档或实际下载日志取得主机，核对跳转和归属，再更新该分类并运行 `mise run build` / `mise run check`；不要靠不断放宽关键词解决漏项。
+
 ## 腾讯、网易应用与游戏深入补充（2026-10-19）
 
 在下方腾讯自定义规则合并快照的基础上，再核对官方网络清单、网页及 SDK，并交叉参考独立规则集合：

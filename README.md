@@ -18,6 +18,7 @@
 | [steam.yaml](clash/steam.yaml) | Steam 商店、社区和静态资源 | PROXY |
 | [steam-download.yaml](clash/steam-download.yaml) | Steam 游戏与客户端下载 CDN | DIRECT |
 | [download.list](clash/download.list) | 下载工具进程 | DIRECT |
+| [download-mirrors.yaml](clash/download-mirrors.yaml) | GitHub / Hugging Face、软件源、包仓库和容器镜像下载 | DIRECT |
 | [lan.yaml](clash/lan.yaml) | 局域网、本机和链路本地地址 | DIRECT |
 | [reject.yaml](clash/reject.yaml) | 广告与跟踪域名主库 | REJECT |
 | [ad.list](clash/ad.list) | 补充广告拦截规则 | REJECT |
@@ -29,6 +30,14 @@
 `direct.list` 已合并国内软件和游戏规则；需要单独选择策略时，使用 `cn-apps` 和 `cn-games`。按 `cn-games`、`cn-apps`、`direct` 的顺序匹配，方便单独控制微信小游戏等重叠服务。
 
 腾讯、网易分类覆盖 QQ、微信、企业微信、腾讯会议、网易邮箱、云音乐、LOFTER、有道，以及英雄联盟、无畏契约、三角洲、DNF、穿越火线、梦幻西游、逆水寒、永劫无间、燕云十六声、蛋仔派对、第五人格等国服服务。共享账号和下载服务可能同时用于多个应用。
+
+## 镜像下载专区
+
+`download-mirrors` 独立收录镜像域名，统一使用 `DIRECT`，排在 AI、GitHub、CDN、广告及通用代理规则之前。覆盖 `gh-proxy.com` / `.org`、`ghproxy.net`、`ghfast.top`、`gh.llkk.cc`、`github.akams.cn`、`hf-mirror.com`，以及清华、科大、上交等软件源和 npm、Rust、Go、容器镜像。完整清单见规则文件，来源及抽查结果见 [维护记录](docs/rule-sources.md)。
+
+只根据实际连接的镜像主机匹配，不使用 `mirror` / `github` / `download` 关键词、文件后缀、通用下载进程或整个云服务商域名判断。`github.com`、`githubusercontent.com`、`huggingface.co`、`hf.co` 和 `xethub.hf.co` 不属于此分类；原有 `download.list` 继续单独管理下载工具进程。已列出的 jsDelivr 主机同时分发 GitHub 和 npm 内容，这些主机上的内容都会直连。
+
+规则只决定出口，不会把原站 URL 自动替换成镜像。请在工具里选用镜像地址，例如设置 `HF_ENDPOINT=https://hf-mirror.com`。如果镜像返回 302 跳到原站或未收录的对象存储，新连接会按目标主机重新匹配；只在确认专用镜像下载域名后补入，不能将共享的 `amazonaws.com`、`cloudflarestorage.com` 或 `cloudflare.com` 整体直连。镜像规则收录不保证服务当前可达，也不会自动发现新镜像。
 
 ## 使用方式
 
@@ -124,6 +133,14 @@ rule-providers:
     path: ./ruleset/steam-download.yaml
     interval: 86400
 
+  download-mirrors:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/ackness/rules/main/clash/download-mirrors.yaml
+    path: ./ruleset/download-mirrors.yaml
+    interval: 86400
+
   download:
     type: http
     behavior: classical
@@ -195,6 +212,7 @@ rule-providers:
 
 ```yaml
 rules:
+  - RULE-SET,download-mirrors,DIRECT
   - AND,((NETWORK,UDP),(RULE-SET,claude)),REJECT
   - RULE-SET,claude,Claude
   - RULE-SET,browser-webrtc,REJECT
@@ -248,7 +266,7 @@ This repository now contains 37 categories. In addition to the curated service r
 
 The cn-ipcidr geographic list is different from the historical cn-ip.list company allocations. lan and cn-ip remain optional; using this repository does not mean enabling every category in every client.
 
-The canonical sources are clash/ plus catalog.json. Run mise run build to regenerate all 37 sing-box/*.json files, then mise run check to detect stale generated content. Publish both directories together. Do not edit generated JSON directly. This uses Bun's built-in YAML parser and needs no package installation.
+The canonical sources are clash/ plus catalog.json. Run mise run build to regenerate all cataloged sing-box/*.json files, then mise run check to detect stale generated content. Publish both directories together. Do not edit generated JSON directly. This uses Bun's built-in YAML parser and needs no package installation.
 
 challenges.cloudflare.com is deliberately absent from claude: the verification widget must share the embedding site's egress IP, which a per-destination ruleset cannot express. Consuming configs pin it to their general web selector before the Claude ruleset.
 

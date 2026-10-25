@@ -17,6 +17,7 @@
   "direct.json",
   "disney-domain.json",
   "download.json",
+  "download-mirrors.json",
   "gits-domain.json",
   "google-domain.json",
   "google-ipcidr.json",

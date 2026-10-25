@@ -1,0 +1,47 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix": [
+        "gh-proxy.com",
+        "gh-proxy.org",
+        "ghproxy.net",
+        "ghfast.top",
+        "hf-mirror.com",
+        "mirrors.cernet.edu.cn",
+        "mirrors.tuna.tsinghua.edu.cn",
+        "mirrors.ustc.edu.cn",
+        "mirror.sjtu.edu.cn",
+        "mirrors.sjtug.sjtu.edu.cn",
+        "mirrors.bfsu.edu.cn",
+        "mirrors.nju.edu.cn",
+        "mirrors.sustech.edu.cn",
+        "mirrors.sdu.edu.cn",
+        "mirrors.aliyun.com",
+        "mirrors.cloud.tencent.com",
+        "mirrors.huaweicloud.com",
+        "repo.huaweicloud.com",
+        "npmmirror.com",
+        "rsproxy.cn",
+        "goproxy.cn",
+        "m.daocloud.io"
+      ]
+    },
+    {
+      "domain": [
+        "gh.llkk.cc",
+        "github.akams.cn",
+        "cdn.jsdelivr.net",
+        "testingcf.jsdelivr.net",
+        "gcore.jsdelivr.net",
+        "mirrors4.tuna.tsinghua.edu.cn",
+        "mirrors6.tuna.tsinghua.edu.cn",
+        "pypi.tuna.tsinghua.edu.cn",
+        "mirrors4.bfsu.edu.cn",
+        "mirrors6.bfsu.edu.cn",
+        "maven.aliyun.com",
+        "docker.1ms.run"
+      ]
+    }
+  ]
+}

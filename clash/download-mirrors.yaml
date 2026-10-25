@@ -1,0 +1,51 @@
+# Download mirrors only; reviewed 2026-10-25.
+# Route before AI, Git hosting, CDN and generic proxy rules.
+# Sources and boundaries: ../docs/rule-sources.md
+payload:
+  # GitHub reverse proxies, including dedicated regional subdomains.
+  - DOMAIN-SUFFIX,gh-proxy.com
+  - DOMAIN-SUFFIX,gh-proxy.org
+  - DOMAIN-SUFFIX,ghproxy.net
+  - DOMAIN-SUFFIX,ghfast.top
+  - DOMAIN,gh.llkk.cc
+  - DOMAIN,github.akams.cn
+
+  # Hugging Face mirror; upstream HF/Xet/object storage is not a mirror.
+  - DOMAIN-SUFFIX,hf-mirror.com
+
+  # Explicit GitHub/npm content mirrors; do not match the whole CDN parent.
+  - DOMAIN,cdn.jsdelivr.net
+  - DOMAIN,testingcf.jsdelivr.net
+  - DOMAIN,gcore.jsdelivr.net
+
+  # University and CERNET software mirrors, including documented aliases.
+  - DOMAIN-SUFFIX,mirrors.cernet.edu.cn
+  - DOMAIN-SUFFIX,mirrors.tuna.tsinghua.edu.cn
+  - DOMAIN,mirrors4.tuna.tsinghua.edu.cn
+  - DOMAIN,mirrors6.tuna.tsinghua.edu.cn
+  - DOMAIN,pypi.tuna.tsinghua.edu.cn
+  - DOMAIN-SUFFIX,mirrors.ustc.edu.cn
+  - DOMAIN-SUFFIX,mirror.sjtu.edu.cn
+  - DOMAIN-SUFFIX,mirrors.sjtug.sjtu.edu.cn
+  - DOMAIN-SUFFIX,mirrors.bfsu.edu.cn
+  - DOMAIN,mirrors4.bfsu.edu.cn
+  - DOMAIN,mirrors6.bfsu.edu.cn
+  - DOMAIN-SUFFIX,mirrors.nju.edu.cn
+  - DOMAIN-SUFFIX,mirrors.sustech.edu.cn
+  - DOMAIN-SUFFIX,mirrors.sdu.edu.cn
+
+  # Cloud vendor software/package mirrors, not general cloud services.
+  - DOMAIN-SUFFIX,mirrors.aliyun.com
+  - DOMAIN,maven.aliyun.com
+  - DOMAIN-SUFFIX,mirrors.cloud.tencent.com
+  - DOMAIN-SUFFIX,mirrors.huaweicloud.com
+  - DOMAIN-SUFFIX,repo.huaweicloud.com
+
+  # Package registries and dedicated download hosts below their mirror domain.
+  - DOMAIN-SUFFIX,npmmirror.com
+  - DOMAIN-SUFFIX,rsproxy.cn
+  - DOMAIN-SUFFIX,goproxy.cn
+
+  # Container registry mirrors.
+  - DOMAIN-SUFFIX,m.daocloud.io
+  - DOMAIN,docker.1ms.run
