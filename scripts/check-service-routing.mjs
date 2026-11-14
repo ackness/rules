@@ -25,6 +25,7 @@ function matches(name, host) {
     const [type, value] = item.split(',');
     if (type === 'DOMAIN') return host === value;
     if (type === 'DOMAIN-SUFFIX') return suffix(host, value);
+    if (['PROCESS-NAME', 'IP-CIDR', 'IP-CIDR6'].includes(type)) return false;
     throw Error(`Unexpected non-domain service rule: ${item}`);
   });
 }
@@ -34,13 +35,31 @@ function generatedMatches(name, host) {
     || rule.domain_regex?.some(pattern => new RegExp(pattern).test(host)));
 }
 
+const announced = new Set(JSON.parse(fs.readFileSync(path.join(root, 'asn-prefixes.json'), 'utf8')).prefixes['399358']);
+const claudePrefixes = source('claude').filter(rule => /^IP-CIDR6?,/.test(rule)).map(rule => rule.split(',')[1]);
+assert(claudePrefixes.length > 0);
+for (const prefix of claudePrefixes) assert(announced.has(prefix), 'Claude prefix is outside the recorded RIPE announcement: ' + prefix);
+const generatedClaude = JSON.parse(fs.readFileSync(path.join(root, 'sing-box/claude.json'), 'utf8'));
+assert.deepEqual(generatedClaude.rules.flatMap(rule => rule.ip_cidr || []), claudePrefixes);
+
 const crypto = new Set(source('crypto'));
 for (const rule of source('crypto-regional')) assert(crypto.has(rule), `Regional rule missing from compatibility aggregate: ${rule}`);
-for (const name of ['crypto', 'crypto-regional', 'download-mirrors', 'twitter-domain', 'google-domain', 'gits-domain', 'apple-cdn', 'steam-download']) {
+for (const name of ['crypto', 'crypto-regional', 'download-mirrors', 'twitter-domain', 'google-domain', 'gits-domain', 'apple-cdn', 'steam-download', 'claude']) {
   const rules = source(name);
   assert.equal(new Set(rules).size, rules.length, `Duplicate source entry: ${name}`);
 }
 const cases = {
+  'claude': {
+    yes: ['anthropic.com', 'api.anthropic.com', 'cdn.anthropic.com', 'mcp.anthropic.com', 'claude.ai', 'claude.com',
+      'platform.claude.com', 'sso.claude.com', 'clau.de', 'claudemcpclient.com', 'widget.claudemcpcontent.com',
+      'bridge.claudeusercontent.com', 'servd-anthropic-website.b-cdn.net', 'anthropic.com.cdn.cloudflare.net',
+      'anthropic.auth0.com', 'anthropic-com.ghost.io', 'o33249.ingest.sentry.io', 'events.statsigapi.net',
+      'browser-intake-us5-datadoghq.com', 'http-intake.logs.us5.datadoghq.com', 'api.sift.com', 'widget.intercom.io',
+      'js.intercomcdn.com', 'cdn.usefathom.com', 'inquiry.withpersona.com'],
+    no: ['anthropic.com.example.org', 'notanthropic.com', 'datadog.example.org', 'sentry.example.org',
+      'sift.example.org', 'challenges.cloudflare.com', 'maps.googleapis.com', 'frompersona.com',
+      'pool.ntp.org', 'time.windows.com'],
+  },
   'apple-cdn': {
     yes: ['is1-ssl.mzstatic.com', 'is6-ssl.mzstatic.com', 'a100.mzstatic.com', 'apps.mzstatic.com', 'iosapps.itunes.apple.com',
       'osxapps.itunes.apple.com', 'iosapps.itunes.g.aaplimg.com', 'osxapps.itunes.g.aaplimg.com', 'appldnld.apple.com',

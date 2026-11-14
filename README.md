@@ -271,7 +271,8 @@ rules:
 
 - `crypto` 当前为 464 条，`crypto-regional` 为其中 143 条的地区敏感子表。Binance 全球站、Hyperliquid、OKX、Polymarket、Predict.fun、Pump.fun、GMGN、DeBot、Axiom 及新增 DEX 由非美子表优先分流；Privy 等精确共享主机也会影响其他应用。非美表示出口偏好，不代表账号和所有产品可用，官方范围、域名核对和本机探测见 [地区记录](docs/service-regions.md)。
 - X/Twitter 新增独立 `twitter-domain`；原 `socialmedia-domain` 保留兼容覆盖。Google / GitHub 采用当前社区快照并补充官方 Copilot 会话端点；AI、广告、国内／代理兜底和地理 IP 的增量及冲突检查见 [社区复核](docs/community-review-2026-11-14.md)。Builtin 与 Sing-Box 补齐显式服务引用。
-- `claude` preserves historical service and shared dependency domains by explicit user preference. These also route other applications through Claude. Vendor suffixes replace unrestricted sentry/datadog/sift keywords; unverified IP/ASN ranges stay excluded. Domain ownership and exhaustive runtime dependency coverage are not guaranteed.
+- `claude` 保留已有的历史服务和共享依赖偏好，供应商后缀替代泛关键词；本轮加入 RIPE 确认的 3 段 IP 兜底，未扩展到全部分配网段或动态 ASN。域名并非全部已重新核实为第一方，规则不保证覆盖所有未来依赖。对照 Net.Coffee 两篇文章及官方资料的结论见 [Claude 网络核对](docs/claude-network-review.md)。
+- 框架默认将 Claude DNS 绑定到所选 Claude 节点，保留显式自定义解析器，以及下载镜像、MagicDNS 的优先例外。独立规则文件本身不会设置 DNS、CLI 环境或系统 IPv6；这些由客户端和框架配置控制。
 - Claude 组使用手动选择的具体节点，不包含 `DIRECT` 或会自动切换的嵌套组；无节点时使用 `REJECT`。Claude 规则优先于通用直连与广告规则，其 UDP 单独拒绝。节点被删除、订阅刷新或选择缓存重置后，应重新核对出口；双栈或服务端出口轮换无法仅靠规则消除。
 - 隐私与性能采用分层方案：Chrome 的 `WebRtcIPHandling`、Edge 的 `WebRtcLocalhostIpHandling` 设为 `disable_non_proxied_udp`，限制未代理的 WebRTC UDP；普通网页 QUIC 不受这项策略直接限制。浏览器通话可能改走 TCP、增加延迟或失败。参见 [Chromium 策略定义](https://github.com/chromium/chromium/blob/main/components/policy/resources/templates/policy_definitions/WebRtc/WebRtcIPHandling.yaml) 和 [Edge 策略](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/webrtclocalhostiphandling)。
 - `browser-webrtc` 仅补充拦截识别到的浏览器进程使用常见 STUN/TURN UDP 端口或含 `stun` 的域名；任意端口、未识别进程、未进入 Mihomo 的连接均不由它兜底。TUN 关闭时尤其需要浏览器策略；mDNS 隐藏局域网地址不等于隐藏公网地址。规则必须放在通用直连规则前，实际生效还应检查浏览器策略和 ICE 候选地址。

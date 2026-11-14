@@ -3,7 +3,9 @@
 # challenges.cloudflare.com is deliberately absent: the verification widget must
 # share the embedding site's egress, so consuming configs pin it separately.
 # Historical domain entries preserve coverage; they are not all verified first-party domains.
-# Vendor suffixes replace unrestricted keyword matches; unverified IP/ASN ranges stay excluded.
+# Vendor suffixes replace unrestricted keyword matches; only RIPE-confirmed
+# announced IP prefixes are included. Broad allocations and ASN matching remain excluded.
+# Network review: docs/claude-network-review.md
 # Datadog: https://docs.datadoghq.com/real_user_monitoring/guide/proxy-rum-data/
 # Sift: https://developers.sift.com/docs/curl/apis-overview/overview/
 # Baseline attribution: licenses/vpsdance-mit.txt.
@@ -81,3 +83,10 @@ payload:
   - DOMAIN-SUFFIX,browser-intake-us5-datadoghq.com
   - DOMAIN-SUFFIX,datadoghq-browser-agent.com
   - DOMAIN-SUFFIX,sift.com
+
+  # AS399358 announced prefixes, checked 2026-11-14 via RIPE RIS.
+  # Allocation ownership alone is not proof that every address hosts Claude.
+  # https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS399358
+  - IP-CIDR,160.79.104.0/23,no-resolve
+  - IP-CIDR6,2607:6bc0::/48,no-resolve
+  - IP-CIDR6,2607:6bc0:11::/48,no-resolve

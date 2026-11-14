@@ -2,6 +2,12 @@
 
 此文件记录来源、筛选理由和各轮维护快照；配置用法见 [README](../README.md)。
 
+## Claude 域名、DNS 与 IP 复核（2026-11-14）
+
+对照用户提供的 Net.Coffee 域名页及稳定使用指南，并核对 Claude 官方网络要求、ARIN、RIPE 和 NTP 标准。页面完整配置中的 17 条域名规则均已覆盖；本轮增加 AS399358 当前宣告的 IPv4 `/23` 及两个 IPv6 `/48`，`claude` 从 73 增至 76 条。ARIN 证实更大的 `/21`、`/32` 分配归属，但未据此扩大到所有分配地址，亦未新增 ASN 数据库依赖。
+
+框架为有效 Claude 分组补入专用 DNS 路径：Mihomo 使用 `#Claude`，Sing-Box 使用 `claude-dns` 的 `detour: claude` 及连接前显式解析；保留自定义解析器、镜像和 MagicDNS 例外。没有加入全局 NTP、泛关键词，或对 TLS 指纹、住宅 IP、并发限制做账号安全保证。页面正文的两个额外 KYC 主机未获得通用运行依赖证据，保留原策略。完整说明见 [Claude 网络核对](claude-network-review.md)。本轮不新增分类，现有 `claude` 文件仍需通过规则缓存发布新内容，DNS 逻辑需更新 Worker。
+
 ## Tailscale 内网兼容补充（2026-11-14）
 
 框架在已有 IPv4 / IPv6、域名、进程、MagicDNS 和 Clash TUN 绕行的基础上，为 Sing-Box 增加 `*.ts.net` 连接时的指定解析器 `resolve`，并给已有 TUN 入站合并 mesh 地址排除。两个内核均补充 UDP 源端口 41641 直连，保留已有目标端口规则；官方说明指出 NAT 后的目标端口不一定相同。个人子网、解析器和网卡选项保留，不猜测实际 LAN 网段或创建 TUN。此处属于框架 DNS / TUN 集成，不新增远程分类。
