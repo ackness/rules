@@ -1,0 +1,27 @@
+# X / Twitter: web, API, media, video, Spaces and short links.
+# Reviewed 2026-11-14 against v2fly/domain-list-community commit
+# 777d056afe68b2643c1ef15f80e7bde3dfa149b1 (MIT; licenses/v2fly-mit.txt).
+# Advertising-only ads-twitter.com and tellapart.com are excluded.
+payload:
+  - +.cms-twdigitalassets.com
+  - +.periscope.tv
+  - +.pscp.tv
+  - +.t.co
+  - +.tweetdeck.com
+  - +.twimg.com
+  - +.twitpic.com
+  - +.twitter.biz
+  - +.twitter.com
+  - +.twitter.jp
+  - +.twitter.map.fastly.net
+  - +.twittercommunity.com
+  - +.twitterflightschool.com
+  - +.twitterinc.com
+  - +.twitteroauth.com
+  - +.twitterstat.us
+  - +.twtrdns.net
+  - +.twttr.com
+  - +.twttr.net
+  - +.twvid.com
+  - +.vine.co
+  - +.x.com

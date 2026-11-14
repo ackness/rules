@@ -11,6 +11,10 @@
     "file": "clash/analysis.yaml",
     "behavior": "classical"
   },
+  "apple-cdn": {
+    "file": "clash/apple-cdn.yaml",
+    "behavior": "domain"
+  },
   "apple-cn-domain": {
     "file": "clash/apple-cn-domain.yaml",
     "behavior": "domain"
@@ -54,6 +58,10 @@
   "cn-ipcidr": {
     "file": "clash/cn-ipcidr.yaml",
     "behavior": "ipcidr"
+  },
+  "crypto-regional": {
+    "file": "clash/crypto-regional.yaml",
+    "behavior": "classical"
   },
   "crypto": {
     "file": "clash/crypto.yaml",
@@ -146,6 +154,10 @@
   "tencent-direct": {
     "file": "clash/tencent-direct.yaml",
     "behavior": "classical"
+  },
+  "twitter-domain": {
+    "file": "clash/twitter-domain.yaml",
+    "behavior": "domain"
   },
   "youtube-domain": {
     "file": "clash/youtube-domain.yaml",

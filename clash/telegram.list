@@ -1,5 +1,5 @@
-# Telegram messaging and owned web services; refreshed 2026-10-19.
-# https://github.com/v2fly/domain-list-community/blob/c16efa599b12a9e4b327949b3ed3f8ffff4b33c3/data/telegram
+# Telegram messaging and owned web services; reviewed 2026-11-14.
+# https://github.com/v2fly/domain-list-community/blob/777d056afe68b2643c1ef15f80e7bde3dfa149b1/data/telegram
 # https://core.telegram.org/resources/cidr.txt
 # TON/Fragment crypto services remain outside the messaging category.
 DOMAIN-SUFFIX,cdn-telegram.org

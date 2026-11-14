@@ -2,6 +2,7 @@
   "ad.json",
   "ai.json",
   "analysis.json",
+  "apple-cdn.json",
   "apple-cn-domain.json",
   "apple-domain.json",
   "browser-webrtc.json",
@@ -13,6 +14,7 @@
   "cn-games.json",
   "cn-ip.json",
   "cn-ipcidr.json",
+  "crypto-regional.json",
   "crypto.json",
   "direct.json",
   "disney-domain.json",
@@ -36,5 +38,6 @@
   "steam.json",
   "telegram.json",
   "tencent-direct.json",
+  "twitter-domain.json",
   "youtube-domain.json"
 ]

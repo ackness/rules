@@ -1,4 +1,4 @@
-# Download mirrors only; reviewed 2026-10-25.
+# Download mirrors only; reviewed 2026-11-14.
 # Route before AI, Git hosting, CDN and generic proxy rules.
 # Sources and boundaries: ../docs/rule-sources.md
 payload:
@@ -9,6 +9,38 @@ payload:
   - DOMAIN-SUFFIX,ghfast.top
   - DOMAIN,gh.llkk.cc
   - DOMAIN,github.akams.cn
+
+  # User-supplied Release/ZIP mirrors; retained independently of probe results.
+  # Exact hosts keep unrelated sites under eu.org/xyz/top/CDN domains unaffected.
+  - DOMAIN,gh.h233.eu.org
+  - DOMAIN,gh.api.99988866.xyz
+  - DOMAIN,ghproxy.1888866.xyz
+  - DOMAIN,gh.ddlc.top
+  - DOMAIN,dl.ghpig.top
+  - DOMAIN,slink.ltd
+  - DOMAIN,cors.isteed.cc
+  - DOMAIN,ghproxy.it
+  - DOMAIN,github.boki.moe
+  - DOMAIN,gh-proxy.net
+  - DOMAIN,ghdd.862510.xyz
+  - DOMAIN,wget.la
+
+  # User-supplied Git Clone mirrors.
+  - DOMAIN,gitclone.com
+  - DOMAIN,kkgithub.com
+  - DOMAIN,githubfast.com
+  - DOMAIN,github.moeyy.xyz
+
+  # User-supplied SSH endpoints; hostname rules also apply to TCP port 22.
+  - DOMAIN,ssh.fastgit.org
+  - DOMAIN,git.zhlh6.cn
+
+  # User-supplied Raw mirrors (keep jsDelivr limited to explicit hosts).
+  - DOMAIN,raw.kkgithub.com
+  - DOMAIN,jsd.proxy.aks.moe
+  - DOMAIN,fastly.jsdelivr.net
+  - DOMAIN,jsdelivr.pai233.top
+  - DOMAIN,raw.cachefly.998111.xyz
 
   # Hugging Face mirror; upstream HF/Xet/object storage is not a mirror.
   - DOMAIN-SUFFIX,hf-mirror.com
@@ -33,11 +65,16 @@ payload:
   - DOMAIN-SUFFIX,mirrors.nju.edu.cn
   - DOMAIN-SUFFIX,mirrors.sustech.edu.cn
   - DOMAIN-SUFFIX,mirrors.sdu.edu.cn
+  - DOMAIN-SUFFIX,mirrors.pku.edu.cn
+  - DOMAIN-SUFFIX,mirrors.zju.edu.cn
+  - DOMAIN-SUFFIX,mirrors.hit.edu.cn
+  - DOMAIN-SUFFIX,mirrors.hust.edu.cn
 
   # Cloud vendor software/package mirrors, not general cloud services.
   - DOMAIN-SUFFIX,mirrors.aliyun.com
   - DOMAIN,maven.aliyun.com
   - DOMAIN-SUFFIX,mirrors.cloud.tencent.com
+  - DOMAIN-SUFFIX,mirrors.tencent.com
   - DOMAIN-SUFFIX,mirrors.huaweicloud.com
   - DOMAIN-SUFFIX,repo.huaweicloud.com
 
@@ -45,6 +82,8 @@ payload:
   - DOMAIN-SUFFIX,npmmirror.com
   - DOMAIN-SUFFIX,rsproxy.cn
   - DOMAIN-SUFFIX,goproxy.cn
+  - DOMAIN-SUFFIX,goproxy.io
+  - DOMAIN,goproxy.bj.bcebos.com
 
   # Container registry mirrors.
   - DOMAIN-SUFFIX,m.daocloud.io

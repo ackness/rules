@@ -139,6 +139,13 @@
         "coze.com",
         "marscode.com",
         "trae.ai",
+        "context7.com",
+        "cline.bot",
+        "commandcode.ai",
+        "plannotator.ai",
+        "typesafe.ai",
+        "nousresearch.com",
+        "artificialanalysis.ai",
         "devinapps.com"
       ]
     },
@@ -158,6 +165,14 @@
         "copilot-reports.github.com",
         "copilot-telemetry-service.githubusercontent.com",
         "copilot-telemetry.githubusercontent.com",
+        "production-copilot-host-centralus.webpubsub.azure.com",
+        "production-copilot-host-centralus-02.webpubsub.azure.com",
+        "production-copilot-host-eastasia.webpubsub.azure.com",
+        "production-copilot-host-austriaeast.webpubsub.azure.com",
+        "production-copilot-host-westus.webpubsub.azure.com",
+        "production-copilot-host-westus3.webpubsub.azure.com",
+        "production-copilot-host.webpubsub.azure.com",
+        "default.exp-tas.com",
         "sydney.bing.com",
         "ai.google.dev",
         "alkalicore-pa.clients6.google.com",
@@ -172,6 +187,9 @@
         "notebooklm.googleapis.com",
         "antigravity-pa.googleapis.com",
         "antigravity.googleapis.com",
+        "appsgenaiserver-pa.clients.google.com",
+        "appsgenaiserver-pa.clients6.google.com",
+        "appsgenaiserver-pa.googleapis.com",
         "ppl-ai-file-upload.s3.amazonaws.com",
         "pplx-res.cloudinary.com",
         "imagine.meta.com"
@@ -181,6 +199,12 @@
       "ip_cidr": [
         "160.79.104.0/23",
         "2607:6bc0::/48"
+      ]
+    },
+    {
+      "domain_regex": [
+        "^copilot-reports-[^.]*\\.b01\\.azurefd\\.net$",
+        "^usagereports[^.]*\\.blob\\.core\\.windows\\.net$"
       ]
     },
     {

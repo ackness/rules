@@ -28,6 +28,17 @@ payload:
     - productionresultssa19.blob.core.windows.net
     - copilot-proxy.githubusercontent.com
     - copilot-workspace.githubnext.com
+    - production-copilot-host-westus.webpubsub.azure.com
+    # Additional exact hosts and bounded wildcards from GitHub's Copilot allowlist.
+    - production-copilot-host-centralus.webpubsub.azure.com
+    - production-copilot-host-centralus-02.webpubsub.azure.com
+    - production-copilot-host-eastasia.webpubsub.azure.com
+    - production-copilot-host-austriaeast.webpubsub.azure.com
+    - production-copilot-host-westus3.webpubsub.azure.com
+    - production-copilot-host.webpubsub.azure.com
+    - default.exp-tas.com
+    - copilot-reports-*.b01.azurefd.net
+    - usagereports*.blob.core.windows.net
     - copilotprodattachments.blob.core.windows.net
     - +.atom.io
     - +.dependabot.com

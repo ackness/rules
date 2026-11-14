@@ -1,7 +1,7 @@
 # AI services (classical rules)
-# Reviewed: 2026-10-19
-# Source: https://github.com/v2fly/domain-list-community/tree/c16efa599b12a9e4b327949b3ed3f8ffff4b33c3/data
-# Cross-check: MetaCubeX/meta-rules-dat@7c782352439ce9ccaba53519ec816f82f52b6285
+# Reviewed: 2026-11-14
+# Source: https://github.com/v2fly/domain-list-community/tree/777d056afe68b2643c1ef15f80e7bde3dfa149b1/data
+# Cross-check: MetaCubeX/meta-rules-dat@1127bb69cd31beba3d8fd851a9dba92e66eead42
 # Adapted with local rules; see README.md and licenses/v2fly-mit.txt.
 payload:
 
@@ -49,6 +49,17 @@ payload:
   - DOMAIN,copilot-reports.github.com
   - DOMAIN,copilot-telemetry-service.githubusercontent.com
   - DOMAIN,copilot-telemetry.githubusercontent.com
+  # Official Copilot allowlist: exact cloud-session WebSocket endpoints.
+  - DOMAIN,production-copilot-host-centralus.webpubsub.azure.com
+  - DOMAIN,production-copilot-host-centralus-02.webpubsub.azure.com
+  - DOMAIN,production-copilot-host-eastasia.webpubsub.azure.com
+  - DOMAIN,production-copilot-host-austriaeast.webpubsub.azure.com
+  - DOMAIN,production-copilot-host-westus.webpubsub.azure.com
+  - DOMAIN,production-copilot-host-westus3.webpubsub.azure.com
+  - DOMAIN,production-copilot-host.webpubsub.azure.com
+  - DOMAIN,default.exp-tas.com
+  - DOMAIN-REGEX,^copilot-reports-[^.]*\.b01\.azurefd\.net$
+  - DOMAIN-REGEX,^usagereports[^.]*\.blob\.core\.windows\.net$
 
   # Microsoft Copilot
   - DOMAIN-SUFFIX,copilot-stg.com
@@ -101,6 +112,9 @@ payload:
   - DOMAIN-SUFFIX,opal.google.com
   - DOMAIN,antigravity-pa.googleapis.com
   - DOMAIN,antigravity.googleapis.com
+  - DOMAIN,appsgenaiserver-pa.clients.google.com
+  - DOMAIN,appsgenaiserver-pa.clients6.google.com
+  - DOMAIN,appsgenaiserver-pa.googleapis.com
   - DOMAIN-SUFFIX,antigravity.google
   - DOMAIN-SUFFIX,antigravity-unleash.goog
   - DOMAIN-SUFFIX,stitch.withgoogle.com
@@ -222,6 +236,14 @@ payload:
   - DOMAIN-SUFFIX,coze.com
   - DOMAIN-SUFFIX,marscode.com
   - DOMAIN-SUFFIX,trae.ai
+
+  - DOMAIN-SUFFIX,context7.com
+  - DOMAIN-SUFFIX,cline.bot
+  - DOMAIN-SUFFIX,commandcode.ai
+  - DOMAIN-SUFFIX,plannotator.ai
+  - DOMAIN-SUFFIX,typesafe.ai
+  - DOMAIN-SUFFIX,nousresearch.com
+  - DOMAIN-SUFFIX,artificialanalysis.ai
 
   # Retained local service rules
   - DOMAIN,imagine.meta.com

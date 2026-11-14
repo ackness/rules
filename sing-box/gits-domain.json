@@ -32,9 +32,23 @@
         "productionresultssa19.blob.core.windows.net",
         "copilot-proxy.githubusercontent.com",
         "copilot-workspace.githubnext.com",
+        "production-copilot-host-westus.webpubsub.azure.com",
+        "production-copilot-host-centralus.webpubsub.azure.com",
+        "production-copilot-host-centralus-02.webpubsub.azure.com",
+        "production-copilot-host-eastasia.webpubsub.azure.com",
+        "production-copilot-host-austriaeast.webpubsub.azure.com",
+        "production-copilot-host-westus3.webpubsub.azure.com",
+        "production-copilot-host.webpubsub.azure.com",
+        "default.exp-tas.com",
         "copilotprodattachments.blob.core.windows.net",
         "copilot-telemetry-service.githubusercontent.com",
         "copilot-telemetry.githubusercontent.com"
+      ]
+    },
+    {
+      "domain_regex": [
+        "^copilot-reports-[^.]*\\.b01\\.azurefd\\.net$",
+        "^usagereports[^.]*\\.blob\\.core\\.windows\\.net$"
       ]
     },
     {

@@ -1,5 +1,6 @@
 # Cloudflare service domains. Shared hosting and edge IP ranges are excluded.
-# https://github.com/v2fly/domain-list-community/blob/c16efa599b12a9e4b327949b3ed3f8ffff4b33c3/data/cloudflare
+# Reviewed 2026-11-14 against v2fly/domain-list-community commit:
+# https://github.com/v2fly/domain-list-community/blob/777d056afe68b2643c1ef15f80e7bde3dfa149b1/data/cloudflare
 # Customer sites follow their own domain policies or the general web policy.
 payload:
   - DOMAIN-SUFFIX,argotunnel.com

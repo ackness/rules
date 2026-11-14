@@ -1,44 +1,59 @@
 {
-  "updated": "2026-10-19T05:12:04.415Z",
+  "updated": "2026-11-14T08:05:22Z",
   "files": {
     "youtube-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/youtube.yaml",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/youtube.yaml",
       "sha256": "ec32854438b8ad4e2f2f2ee0d578834c667f1d0cec4c82357e34629452d2fc5d"
     },
     "google-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/google.yaml",
-      "sha256": "b4d61db5d5684972e8f1d2f8e710d6c0db4cd2a44aa961afdd65bb98e8759622"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/google.yaml",
+      "sha256": "ed9c90c9e917edb587a7a96f2fd4bc31fb2e531a16e8f7d23b09a411481a13dd"
     },
     "google-ipcidr.yaml": {
       "behavior": "ipcidr",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geoip/google.yaml",
-      "sha256": "21464bd6b0fe8ade7d97de5df1767cfdfded8a897bd6691242874b12eecf139e"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geoip/google.yaml",
+      "sha256": "63f9d20349549dd26b26ae93903f1c521f711a557eca5f34c0c31761ded631e5"
     },
     "gits-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/github.yaml",
-      "sha256": "a4cde29dee08b937d6c2fabf256e032b9ceb3583942cffe05cf53fc9571d45b4"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/github.yaml",
+      "sha256": "853d65050294ae97949c5bf44f0b070835ef5083c9d2599e65f28b2bbc8ba17d",
+      "upstreamSha256": "d13336c90dca1e73ab42da19c865e2e7f116d5288d061bc1bf9597fbc411d623",
+      "additionalSources": [
+        "https://docs.github.com/en/copilot/reference/copilot-allowlist-reference"
+      ],
+      "localAdditions": [
+        "production-copilot-host-centralus.webpubsub.azure.com",
+        "production-copilot-host-centralus-02.webpubsub.azure.com",
+        "production-copilot-host-eastasia.webpubsub.azure.com",
+        "production-copilot-host-austriaeast.webpubsub.azure.com",
+        "production-copilot-host-westus3.webpubsub.azure.com",
+        "production-copilot-host.webpubsub.azure.com",
+        "default.exp-tas.com",
+        "copilot-reports-*.b01.azurefd.net",
+        "usagereports*.blob.core.windows.net"
+      ]
     },
     "socialmedia-domain.list": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/QuixoticHeart/rule-set/ruleset/meta/domain/socialmedia.list",
+      "source": "https://raw.githubusercontent.com/QuixoticHeart/rule-set/6864f3e1116f3f0dc1be8456911017fc9f73d98a/meta/domain/socialmedia.list",
       "sha256": "00c1bf7e502b181e1457bf875df81e155b6b05b9199b9cb3ed7beeff2c8f6e17"
     },
     "apple-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/apple.yaml",
-      "sha256": "f0137ea00f4178ec3732713e0f255b4eb83d2d774be76618dfd506d354b7bc29"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/apple.yaml",
+      "sha256": "6600c80b13a3b74f7541f8facd5602d0ca791567abadf711d73046c8b1eb880a"
     },
     "apple-cn-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/apple-cn.yaml",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/apple-cn.yaml",
       "sha256": "97a0f9d9d843280516f88ee6473cf76c50ffd4c819680b9512b1de9d0335d928"
     },
     "private-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/private.yaml",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/private.yaml",
       "sha256": "7f396a73bf5c01725cf4a51e6089239491a0d8cb3c808bd1c524d78391221440"
     },
     "private-ipcidr.yaml": {
@@ -48,48 +63,53 @@
     },
     "proxy-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/geolocation-!cn.yaml",
-      "sha256": "fa8e98aa4917e5f8a0fa6441e1906b58f33c1c99b6bdd4a3395a0565a91222d0"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/geolocation-!cn.yaml",
+      "sha256": "19298e4f8f98f5ea38ad162125b5b3d165ca116fc03f8514e3bfdbb79083168a"
     },
     "cn-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/cn.yaml",
-      "sha256": "66e361f763337a61451d021bf9df9cbf27e841e604df8a9c7b98e583e6744db7"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/cn.yaml",
+      "sha256": "f03c301bc6ef21349da52b377e164aa1518f5549188575bc08b4e4436651b620"
     },
     "cn-ipcidr.yaml": {
       "behavior": "ipcidr",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geoip/cn.yaml",
-      "sha256": "6a1f13e573fc0c97d254490acafcd857395d37976df98308bb30f781840a68fa"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geoip/cn.yaml",
+      "sha256": "3580f5e09a149285105a64a371ba68147a936d8e1d5d849fade8c68203285ade"
     },
     "netflix-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/netflix.yaml",
-      "sha256": "4cf3bf6f2b28d578894d767415bbca0cc8ff4bf326b1ad8fffd59dba41da016f"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/netflix.yaml",
+      "sha256": "8df5a09035034ed72169f566ccc08779f30cebc2bf47681bf512fceef1296a68"
     },
     "netflix-ipcidr.yaml": {
       "behavior": "ipcidr",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geoip/netflix.yaml",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geoip/netflix.yaml",
       "sha256": "409cee1a04e691b033057429b3ecf2d3fb306ef199ec98316cbd5b4eab500084"
     },
     "disney-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/disney.yaml",
-      "sha256": "992da26f20b1ea13627a935316bf30938a4361a098244b4fe645d6789690b6e6"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/disney.yaml",
+      "sha256": "21fee1a588ef81d49cb45714f7efa4d85c05af2b315443f6d55a4fbab6168391"
     },
     "hbo-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/hbo.yaml",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/hbo.yaml",
       "sha256": "cbc98f5511023616dd4d169012978b9dd13d218b7cae0eae85ab0f5266a47ff1"
     },
     "primevideo-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/primevideo.yaml",
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/primevideo.yaml",
       "sha256": "69e06a9273c19da61fc7fee1a026272f8d10e49928b5f06cfe7cf1917b848561"
     },
     "spotify-domain.yaml": {
       "behavior": "domain",
-      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/7c782352439ce9ccaba53519ec816f82f52b6285/geo/geosite/spotify.yaml",
-      "sha256": "f3e69f940cacfa667dfe14d656523d9eb84d358a64195cd0fdefa5d3b0a0ee26"
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/spotify.yaml",
+      "sha256": "385c642d4b578412e43efb6594fa5de3d296f3b31959e5e1520d39213e452347"
+    },
+    "reject.yaml": {
+      "behavior": "domain",
+      "source": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/f67179385329f4c2c859ce56924f8a92fa7785a8/reject.txt",
+      "sha256": "ace895f4b48fb8b9ff75a94478dc6ecc43de0b1a9c828746dd4c8b9bfe460664"
     }
   }
 }

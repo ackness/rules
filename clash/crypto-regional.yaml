@@ -1,0 +1,161 @@
+# Region-sensitive trading services; reviewed 2026-11-14.
+# Route BEFORE crypto to an explicit non-US selector. This is an egress preference,
+# not a list of countries where trading is available. See docs/service-regions.md.
+# crypto remains the compatibility superset. US-specific Binance/Polymarket sites
+# are deliberately excluded. OKX regional URL paths share the same hostname.
+payload:
+  # Binance global service and its dedicated API/static/mobile domains.
+  - DOMAIN-SUFFIX,binance.cc
+  - DOMAIN-SUFFIX,binance.cloud
+  - DOMAIN-SUFFIX,binance.co
+  - DOMAIN-SUFFIX,binance.com
+  - DOMAIN-SUFFIX,binance.info
+  - DOMAIN-SUFFIX,binance.me
+  - DOMAIN-SUFFIX,binance.net
+  - DOMAIN-SUFFIX,binance.vision
+  - DOMAIN-SUFFIX,binancecnt.com
+  - DOMAIN-SUFFIX,binancezh.be
+  - DOMAIN-SUFFIX,binancezh.biz
+  - DOMAIN-SUFFIX,binancezh.cc
+  - DOMAIN-SUFFIX,binancezh.co
+  - DOMAIN-SUFFIX,binancezh.com
+  - DOMAIN-SUFFIX,binancezh.info
+  - DOMAIN-SUFFIX,binancezh.ink
+  - DOMAIN-SUFFIX,binancezh.kim
+  - DOMAIN-SUFFIX,binancezh.link
+  - DOMAIN-SUFFIX,binancezh.live
+  - DOMAIN-SUFFIX,binancezh.mobi
+  - DOMAIN-SUFFIX,binancezh.net
+  - DOMAIN-SUFFIX,binancezh.pro
+  - DOMAIN-SUFFIX,binancezh.sh
+  - DOMAIN-SUFFIX,binancezh.top
+  - DOMAIN-SUFFIX,binanceapi.com
+  - DOMAIN-SUFFIX,binanceru.net
+  - DOMAIN-SUFFIX,binancefuture.com
+  - DOMAIN-SUFFIX,binance.im
+  - DOMAIN-SUFFIX,bmwweb.solutions
+  - DOMAIN-SUFFIX,bnappweb.black
+  - DOMAIN-SUFFIX,bnappweb.academy
+  - DOMAIN-SUFFIX,bnappzh.co
+  - DOMAIN-SUFFIX,bnappzh.com
+  - DOMAIN-SUFFIX,bnappzh.mobi
+  - DOMAIN-SUFFIX,bnbzh.ac
+  - DOMAIN-SUFFIX,bnbstatic.com
+  - DOMAIN-SUFFIX,bntrace.com
+  - DOMAIN-SUFFIX,bsappapi.cc
+  - DOMAIN-SUFFIX,bsappapi.com
+  - DOMAIN-SUFFIX,bscdnweb.com
+  - DOMAIN-SUFFIX,nftstatic.com
+  - DOMAIN-SUFFIX,saasexch.cc
+  - DOMAIN-SUFFIX,saasexch.co
+  - DOMAIN-SUFFIX,saasexch.com
+  - DOMAIN-SUFFIX,saasexch.info
+  - DOMAIN-SUFFIX,saasexch.io
+  - DOMAIN,zftksc.cdn-settings.appsflyersdk.com
+  - DOMAIN,zftksc.launches.appsflyersdk.com
+
+  # OKX (including API/WebSocket), independent of account eligibility.
+  - DOMAIN-SUFFIX,okex.com
+  - DOMAIN-SUFFIX,okex.org
+  - DOMAIN-SUFFIX,okx-dns.com
+  - DOMAIN-SUFFIX,okx-dns1.com
+  - DOMAIN-SUFFIX,okx-dns2.com
+  - DOMAIN-SUFFIX,okx.ac
+  - DOMAIN-SUFFIX,okx.cab
+  - DOMAIN-SUFFIX,okx.com
+  - DOMAIN-SUFFIX,okx.com.cdn.cloudflare.net
+
+  # Other global exchanges with regional product or entity differences.
+  - DOMAIN-SUFFIX,bybit.com
+  - DOMAIN-SUFFIX,bycsi.com
+  - DOMAIN-SUFFIX,bytick.com
+  - DOMAIN-SUFFIX,byapis.com
+  - DOMAIN-SUFFIX,bycbe.com
+  - DOMAIN-SUFFIX,bymj.io
+  - DOMAIN-SUFFIX,byabcde.com
+  - DOMAIN-SUFFIX,byapps.net
+  - DOMAIN-SUFFIX,byd3c3.com
+  - DOMAIN-SUFFIX,bybit.biz
+  - DOMAIN-SUFFIX,bybdc6.com
+  - DOMAIN-SUFFIX,bybit-global.com
+  - DOMAIN-SUFFIX,bybit.cloud
+  - DOMAIN-SUFFIX,bybitglobal.com
+  - DOMAIN,bybit-exchange.github.io
+  - DOMAIN,bybit.ada.support
+  - DOMAIN-SUFFIX,gate.com
+  - DOMAIN-SUFFIX,gate.io
+  - DOMAIN-SUFFIX,gate.tv
+  - DOMAIN-SUFFIX,gateapi.io
+  - DOMAIN-SUFFIX,gatedata.org
+  - DOMAIN-SUFFIX,gateimg.com
+  - DOMAIN-SUFFIX,gateio.live
+  - DOMAIN-SUFFIX,gateio.services
+  - DOMAIN-SUFFIX,gateio.ws
+  - DOMAIN-SUFFIX,gate.ac
+  - DOMAIN-SUFFIX,gatetrace.com
+  - DOMAIN-SUFFIX,gatexsecurity.com
+  - DOMAIN-SUFFIX,htx.com
+  - DOMAIN-SUFFIX,hbabit.com
+  - DOMAIN-SUFFIX,hbfile.net
+  - DOMAIN-SUFFIX,huobi.com
+  - DOMAIN-SUFFIX,huobi.me
+  - DOMAIN-SUFFIX,huobi.pro
+  - DOMAIN-SUFFIX,huobi.sc
+  - DOMAIN-SUFFIX,huobiasia.vip
+  - DOMAIN-SUFFIX,huobigroup.com
+  - DOMAIN-SUFFIX,huobitoken.com
+  - DOMAIN-SUFFIX,kucoin.com
+  - DOMAIN-SUFFIX,kucoin.plus
+  - DOMAIN-SUFFIX,deribit.com
+  - DOMAIN,deribit.cdn.prismic.io
+  - DOMAIN-SUFFIX,bitget.com
+  - DOMAIN-SUFFIX,bitget.fit
+  - DOMAIN-SUFFIX,bitgetapp.com
+  - DOMAIN-SUFFIX,bitgetapps.com
+  - DOMAIN-SUFFIX,bitgetimg.com
+  - DOMAIN-SUFFIX,bitmex.com
+  - DOMAIN-SUFFIX,mexc.co
+  - DOMAIN-SUFFIX,mexc.com
+  - DOMAIN-SUFFIX,mexcsensors.com
+  - DOMAIN-SUFFIX,bitmart.com
+  - DOMAIN-SUFFIX,coinex.com
+  - DOMAIN-SUFFIX,pionex.com
+  - DOMAIN-SUFFIX,bingx.com
+  - DOMAIN-SUFFIX,backpack.exchange
+
+  # Perpetual exchanges, Hyperliquid/Unit and dedicated infrastructure.
+  - DOMAIN-SUFFIX,hyperliquid.xyz
+  - DOMAIN-SUFFIX,hyperliquid-testnet.xyz
+  - DOMAIN-SUFFIX,hyperunit.xyz
+  - DOMAIN-SUFFIX,hyperunit-testnet.xyz
+  - DOMAIN,hyperliquid.statuspage.io
+  - DOMAIN-SUFFIX,lighter.xyz
+  - DOMAIN-SUFFIX,lighter.exchange
+  - DOMAIN-SUFFIX,zklighter.elliot.ai
+  - DOMAIN-SUFFIX,dydx.exchange
+  - DOMAIN-SUFFIX,asterdex.com
+  - DOMAIN-SUFFIX,asterdexfx.com
+  - DOMAIN-SUFFIX,edgex.exchange
+  - DOMAIN-SUFFIX,extended.exchange
+  - DOMAIN-SUFFIX,variational.io
+
+  # International prediction markets; restrictions differ by platform.
+  - DOMAIN-SUFFIX,polymarket.com
+  - DOMAIN-SUFFIX,polymarket.sh
+  - DOMAIN,polymarket-upload.s3.us-east-2.amazonaws.com
+  - DOMAIN,polymarket-next-assets.s3.amazonaws.com
+  - DOMAIN,polymarket-video-ea81y.b-cdn.net
+  - DOMAIN-SUFFIX,predict.fun
+  - DOMAIN-SUFFIX,opinion.trade
+
+  # Trading terminals; keep API/WebSocket/static assets on the same selector.
+  - DOMAIN-SUFFIX,pump.fun
+  - DOMAIN-SUFFIX,gmgn.ai
+  - DOMAIN-SUFFIX,debot.ai
+  - DOMAIN-SUFFIX,axiom.trade
+  - DOMAIN-SUFFIX,axiom-cdn.io
+  - DOMAIN,axiomtrading.sfo3.cdn.digitaloceanspaces.com
+  - DOMAIN,axiom-kol-pfps.sfo3.digitaloceanspaces.com
+  # Shared Privy login hosts affect other applications using these exact hosts.
+  - DOMAIN,auth.privy.io
+  - DOMAIN,api.privy.io

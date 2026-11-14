@@ -1,5 +1,6 @@
-# Steam game/client content delivery; refreshed 2026-10-19.
-# https://github.com/v2fly/domain-list-community/blob/c16efa599b12a9e4b327949b3ed3f8ffff4b33c3/data/steam
+# Steam game/client content delivery; reviewed 2026-11-14.
+# https://github.com/v2fly/domain-list-community/blob/777d056afe68b2643c1ef15f80e7bde3dfa149b1/data/steam
+# Current official SteamPipe server sample is covered by these dedicated hosts.
 # No keyword matching or generic Steam store/static-asset domains.
 payload:
   - DOMAIN-SUFFIX,steamcontent.com
@@ -18,6 +19,12 @@ payload:
   - DOMAIN,steampipe.akamaized.net
   - DOMAIN-SUFFIX,client-update.queniuqe.com
   - DOMAIN-SUFFIX,dl.steam.clngaa.com
+  # Dedicated CN delivery hosts retained in direct.list / current community lists.
+  - DOMAIN,dl.steam.ksyna.com
+  - DOMAIN,steampipe.steamcontent.tnkjmec.com
+  - DOMAIN,cdn-ali.content.steamchina.com
+  - DOMAIN,cdn-qc.content.steamchina.com
+  - DOMAIN,cdn-ws.content.steamchina.com
   - DOMAIN-SUFFIX,st.dl.bscstorage.net
   - DOMAIN-SUFFIX,st.dl.eccdnx.com
   - DOMAIN-SUFFIX,st.dl.pinyuncloud.com

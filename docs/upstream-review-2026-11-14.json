@@ -1,0 +1,180 @@
+{
+  "reviewed": "2026-11-14T08:05:22Z",
+  "snapshots": [
+    {
+      "file": "youtube-domain.yaml",
+      "before": 178,
+      "after": 178,
+      "added": 0,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/youtube.yaml",
+      "status": "unchanged"
+    },
+    {
+      "file": "google-domain.yaml",
+      "before": 1075,
+      "after": 1078,
+      "added": 3,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/google.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "google-ipcidr.yaml",
+      "before": 8552,
+      "after": 7979,
+      "added": 276,
+      "removed": 849,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geoip/google.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "gits-domain.yaml",
+      "before": 65,
+      "after": 66,
+      "final": 75,
+      "officialLocalAdditions": 9,
+      "added": 1,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/github.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "socialmedia-domain.list",
+      "before": 779,
+      "after": 779,
+      "added": 0,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/QuixoticHeart/rule-set/6864f3e1116f3f0dc1be8456911017fc9f73d98a/meta/domain/socialmedia.list",
+      "status": "unchanged"
+    },
+    {
+      "file": "apple-domain.yaml",
+      "before": 1792,
+      "after": 1794,
+      "added": 3,
+      "removed": 1,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/apple.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "apple-cn-domain.yaml",
+      "before": 165,
+      "after": 165,
+      "added": 0,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/apple-cn.yaml",
+      "status": "unchanged"
+    },
+    {
+      "file": "private-domain.yaml",
+      "before": 132,
+      "after": 132,
+      "added": 0,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/private.yaml",
+      "status": "unchanged"
+    },
+    {
+      "file": "private-ipcidr.yaml",
+      "before": 18,
+      "after": 28,
+      "final": 18,
+      "added": 10,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geoip/private.yaml",
+      "status": "kept-local",
+      "reason": "New entries include NAT64 and special-use ranges; not blindly expanded into DIRECT."
+    },
+    {
+      "file": "proxy-domain.yaml",
+      "before": 27213,
+      "after": 27308,
+      "added": 139,
+      "removed": 44,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/geolocation-!cn.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "cn-domain.yaml",
+      "before": 110446,
+      "after": 110177,
+      "added": 35,
+      "removed": 304,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/cn.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "cn-ipcidr.yaml",
+      "before": 10009,
+      "after": 9640,
+      "added": 223,
+      "removed": 592,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geoip/cn.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "netflix-domain.yaml",
+      "before": 24,
+      "after": 24,
+      "added": 1,
+      "removed": 1,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/netflix.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "netflix-ipcidr.yaml",
+      "before": 122,
+      "after": 122,
+      "added": 0,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geoip/netflix.yaml",
+      "status": "unchanged"
+    },
+    {
+      "file": "disney-domain.yaml",
+      "before": 224,
+      "after": 224,
+      "added": 0,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/disney.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "hbo-domain.yaml",
+      "before": 65,
+      "after": 65,
+      "added": 0,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/hbo.yaml",
+      "status": "unchanged"
+    },
+    {
+      "file": "primevideo-domain.yaml",
+      "before": 24,
+      "after": 24,
+      "added": 0,
+      "removed": 0,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/primevideo.yaml",
+      "status": "unchanged"
+    },
+    {
+      "file": "spotify-domain.yaml",
+      "before": 28,
+      "after": 28,
+      "added": 1,
+      "removed": 1,
+      "source": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/1127bb69cd31beba3d8fd851a9dba92e66eead42/geo/geosite/spotify.yaml",
+      "status": "updated"
+    },
+    {
+      "file": "reject.yaml",
+      "before": 195302,
+      "after": 200344,
+      "added": 20376,
+      "removed": 15334,
+      "source": "https://raw.githubusercontent.com/Loyalsoldier/clash-rules/f67179385329f4c2c859ce56924f8a92fa7785a8/reject.txt",
+      "status": "updated"
+    }
+  ]
+}

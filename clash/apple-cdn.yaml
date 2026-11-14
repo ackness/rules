@@ -1,0 +1,36 @@
+# Apple download/static CDN hosts, reviewed 2026-11-14.
+# Source: https://support.apple.com/en-us/101555 and existing Apple CN snapshots.
+# Use before apple-cn-domain/apple-domain; default DIRECT with local DNS.
+# Do not extend this to apple.com, cdn-apple.com, aaplimg.com or shared CDN parents.
+payload:
+  # App Store assets and package delivery, including newer numbered image hosts.
+  - +.mzstatic.com
+  - +.iosapps.itunes.apple.com
+  - iosapps.itunes.g.aaplimg.com
+  - +.osxapps.itunes.apple.com
+  - osxapps.itunes.g.aaplimg.com
+
+  # OS updates, restore images and dedicated delivery aliases.
+  - +.appldnld.apple.com
+  - appldnld.apple.com.edgesuite.net
+  - appldnld.g.aaplimg.com
+  - +.oscdn.apple.com
+  - oscdn.origin-apple.com.akadns.net
+  - +.swcdn.apple.com
+  - swcdn.g.aaplimg.com
+  - +.swdownload.apple.com
+  - +.updates.cdn-apple.com
+  - +.updates-http.cdn-apple.com
+  - updates-http.cdn-apple.com.akadns.net
+
+  # Xcode components and developer downloads; login hosts remain separate.
+  - +.adcdownload.apple.com
+  - adcdownload.apple.com.akadns.net
+  - +.download.developer.apple.com
+  - +.devimages-cdn.apple.com
+
+  # GarageBand, Swift Playgrounds, screen savers and wallpapers.
+  - +.audiocontentdownload.apple.com
+  - +.playground-assets-cdn.apple.com
+  - +.playground-cdn.apple.com
+  - +.sylvan.apple.com

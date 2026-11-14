@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix": [
+        "mzstatic.com",
+        "iosapps.itunes.apple.com",
+        "osxapps.itunes.apple.com",
+        "appldnld.apple.com",
+        "oscdn.apple.com",
+        "swcdn.apple.com",
+        "swdownload.apple.com",
+        "updates.cdn-apple.com",
+        "updates-http.cdn-apple.com",
+        "adcdownload.apple.com",
+        "download.developer.apple.com",
+        "devimages-cdn.apple.com",
+        "audiocontentdownload.apple.com",
+        "playground-assets-cdn.apple.com",
+        "playground-cdn.apple.com",
+        "sylvan.apple.com"
+      ]
+    },
+    {
+      "domain": [
+        "iosapps.itunes.g.aaplimg.com",
+        "osxapps.itunes.g.aaplimg.com",
+        "appldnld.apple.com.edgesuite.net",
+        "appldnld.g.aaplimg.com",
+        "oscdn.origin-apple.com.akadns.net",
+        "swcdn.g.aaplimg.com",
+        "updates-http.cdn-apple.com.akadns.net",
+        "adcdownload.apple.com.akadns.net"
+      ]
+    }
+  ]
+}

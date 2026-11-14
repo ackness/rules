@@ -1,5 +1,5 @@
 # Crypto services (classical rules)
-# Reviewed: 2026-10-19
+# Domain coverage reviewed: 2026-11-14; regional routing: crypto-regional.yaml.
 # Source: https://github.com/v2fly/domain-list-community/tree/c16efa599b12a9e4b327949b3ed3f8ffff4b33c3/data
 # Adapted with local rules; see README.md and licenses/v2fly-mit.txt.
 payload:
@@ -425,6 +425,26 @@ payload:
   - DOMAIN-SUFFIX,wbtc.network
   - DOMAIN-SUFFIX,zkscan.io
   - DOMAIN-SUFFIX,zksync.io
+
+  # November 2026: official sites/docs and live public endpoints.
+  # Service regions and verification limits: docs/service-regions.md.
+  - DOMAIN-SUFFIX,predict.fun
+  - DOMAIN-SUFFIX,opinion.trade
+  - DOMAIN-SUFFIX,asterdex.com
+  - DOMAIN-SUFFIX,asterdexfx.com
+  - DOMAIN-SUFFIX,edgex.exchange
+  - DOMAIN-SUFFIX,extended.exchange
+  - DOMAIN-SUFFIX,variational.io
+  - DOMAIN-SUFFIX,polymarket.sh
+  - DOMAIN,polymarket-upload.s3.us-east-2.amazonaws.com
+  - DOMAIN,polymarket-next-assets.s3.amazonaws.com
+  - DOMAIN,polymarket-video-ea81y.b-cdn.net
+  # Current community additions, checked against their live service pages.
+  - DOMAIN-SUFFIX,cryptoid.info
+  - DOMAIN-SUFFIX,kurs.expert
+
+  # Separate US service: intentionally absent from crypto-regional.
+  - DOMAIN-SUFFIX,polymarket.us
 
   # Retained dedicated desktop clients
   - PROCESS-NAME,Binance.exe

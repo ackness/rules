@@ -2,6 +2,32 @@
 
 此文件记录来源、筛选理由和各轮维护快照；配置用法见 [README](../README.md)。
 
+## Tailscale 内网兼容补充（2026-11-14）
+
+框架在已有 IPv4 / IPv6、域名、进程、MagicDNS 和 Clash TUN 绕行的基础上，为 Sing-Box 增加 `*.ts.net` 连接时的指定解析器 `resolve`，并给已有 TUN 入站合并 mesh 地址排除。两个内核均补充 UDP 源端口 41641 直连，保留已有目标端口规则；官方说明指出 NAT 后的目标端口不一定相同。个人子网、解析器和网卡选项保留，不猜测实际 LAN 网段或创建 TUN。此处属于框架 DNS / TUN 集成，不新增远程分类。
+
+类型检查与 132 项测试通过；三个输出的 289 个域名策略检查通过。Mihomo 检查主模板完整配置，Sing-Box 检查普通及含 TUN 的配置。本地原生 Sing-Box 验证 2 个 MagicDNS 与 6 个 CDN 请求分别使用专用解析器，未查询默认 Google 解析器。未验证用户真实 tailnet、P2P / DERP 或子网连通性。边界与操作说明见框架的 [Tailscale 专项](https://github.com/ackness/fq-cf-workers/blob/main/TAILSCALE.md)。
+
+## Steam / Apple CDN 专项补充（2026-11-14）
+
+新增 `apple-cdn`（24 条），按 Apple 官方网络要求及现有专用别名收录 App Store 资源／下载、OS 更新／恢复和 Xcode 等内容；不匹配账号、整个 Apple 或共享 CDN。`steam-download` 保留原 21 条并补 5 个明确内容主机。三个输出均显式引用 CDN 分类；主 Clash 的 `苹果CDN` 与 `Steam下载` 默认直连并可手动选出口，保持业务策略独立。Sing-Box 在配置有 `local` DNS 时先定向解析再直连，避免默认海外解析器影响 CDN 调度。
+
+类型检查及 128 项测试通过；295 个域名边界和三个输出的 286 个域名最终策略样例通过。Mihomo 95 个本地模拟出口请求、Sing-Box 配置／规则集检查，以及 Sing-Box 6 个本地 DNS + HTTP 内核请求通过。实际取得 App Store 图片和恢复镜像的 HEAD 200 响应，没有下载恢复镜像。官方来源、主机边界、DNS 处理和验证限制见 [CDN 专项](cdn-routing.md)。当前 41 类，主模板 / Builtin / Sing-Box 分别引用 39 / 23 / 20 个 provider；下方记录保留前一阶段的快照数量。
+
+## 大陆访问、非美出口与镜像更新（2026-11-14）
+
+按用户偏好新增 `crypto-regional`（143 条）和 `twitter-domain`（22 条）；`crypto` 从 450 增至 464 条，保留非美子表的全部规则以兼容现有订阅。新增 Predict.fun、Opinion、Aster、edgeX、Extended、Variational 及官网引用的专用资源主机，保留已有 Hyperliquid、Binance、OKX、GMGN、DeBot、Pump.fun、Axiom 覆盖。未将无法解析的 `axios.trade` 或无法确认的 `ddebot` 推测成新域名。
+
+`crypto-regional` 是“避免默认进入美国服务版本”的出口分类。框架主订阅、Builtin 和 Sing-Box 均使用独立非美手动组，候选只含已识别非美地区的具体节点，无候选时拒绝连接；不引用全局或地区自动组。地区依据节点名称识别，未冒充出口 IP 测量。OKX 当前确有美国实体和地区 API；Polymarket 还对多个非美国地区限制产品，均不能用“美国不可用／非美可用”概括。官方页面、条款日期、新闻发现线索、成功及失败的网络探测见 [地区记录](service-regions.md)。
+
+`download-mirrors` 从 34 增至 64 条。用户的 26 个镜像主机中 3 个已有覆盖，其余 23 个按精确主机补入，包含 SSH；另补 7 个高校、腾讯和 Go proxy 入口。源站、共享云平台及未指定的重定向主机不随镜像扩展。用户清单中的失效或异常入口仍按指定偏好收录，逐站结果见 [镜像记录](mirror-probes-2026-11-14.md)。HF-Mirror API 本轮实际重定向至 Hugging Face 原站，源站不因此加入 DIRECT。
+
+Twitter 与 v2fly 提交 [`777d056afe68b2643c1ef15f80e7bde3dfa149b1`](https://github.com/v2fly/domain-list-community/tree/777d056afe68b2643c1ef15f80e7bde3dfa149b1)（2026-11-12 22:04:38 UTC）比对，并保留原 MIT 许可；独立表排除广告专用域名。另对 MetaCubeX、Loyalsoldier、QuixoticHeart 的当前定时发布版本做逐类比较，更新通用域名、广告和地理 IP 快照，AI 从 173 增至 193 条。GitHub 额外采用官方 Copilot allowlist；保留自定义直连、Claude 及 Cloudflare 的边界。固定提交、差异、未采纳项和冲突处理见 [社区复核](community-review-2026-11-14.md)，当前来源与本地补充哈希记录在 `upstream-snapshots.json`。
+
+验证：40 类 Sing-Box 输出生成与陈旧检查通过；217 个域名正反样例在 Clash 源规则和生成 JSON 上一致，另检查非美子表均存在于 crypto 总表。完整配置的 231 个 TCP/443 域名样例在主 Clash、Builtin、Sing-Box 中均符合预期。Worker 类型检查与 123 项测试通过，含美国／未知／混合标签排除、空候选拒绝、手动节点保留、旧组设置隔离及规则顺序。主模板 38、Builtin 21、Sing-Box 18 个引用与本地目录及格式一致；生产和 beta Wrangler dry-run 打包通过。
+
+Mihomo v1.19.34 检查含 40 个本地 provider 的配置，并实际加载 7 个相关 provider，通过 71 个隔离路由请求；所有出口响应来自本地模拟端点，没有对样例网站发送业务流量。Sing-Box v1.14.4 编译全部 40 个源规则集，并通过含所有 18 个本地 provider 的生成配置检查。平台公网探测仅为当前环境的只读访问，未验证中国大陆多运营商、所有订阅节点、账号登录或交易。未部署、推送或修改线上模板与发布状态。
+
 ## 下载镜像独立分类（2026-10-25）
 
 新增 `clash/download-mirrors.yaml`，在 `catalog.json` 登记并生成 `sing-box/download-mirrors.json`。只列明确镜像主机或镜像专用后缀，供 `DIRECT` 使用；不合并原站、下载进程、泛关键词或云平台共享后缀。

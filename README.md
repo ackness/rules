@@ -10,13 +10,16 @@
 | [cn-games.yaml](clash/cn-games.yaml) | 国服登录、启动器、下载与资源，以及英雄联盟、WeGame 进程 | DIRECT |
 | [direct.list](clash/direct.list) | 常用直连规则，包含国内软件和游戏增量 | DIRECT |
 | [ai.yaml](clash/ai.yaml) | AI 助手、模型 API、编程与创作工具 | AI |
-| [crypto.yaml](clash/crypto.yaml) | 交易所、钱包、链上数据和 RPC | Crypto |
+| [crypto.yaml](clash/crypto.yaml) | 交易所、钱包、链上数据和 RPC 的兼容总表 | Crypto |
+| [crypto-regional.yaml](clash/crypto-regional.yaml) | Binance 全球站、Hyperliquid、OKX、预测市场与交易终端的地区出口偏好 | 非美服务，排在 crypto 前 |
+| [twitter-domain.yaml](clash/twitter-domain.yaml) | X / Twitter 的 API、图片、视频、Spaces 和短链 | Twitter / PROXY |
 | [claude.yaml](clash/claude.yaml) | Claude 专用域名及客户端进程分流 | Claude |
 | [tencent-direct.yaml](clash/tencent-direct.yaml) | Windows 微信、英雄联盟、WeGame 进程与腾讯域名 | DIRECT |
 | [browser-webrtc.yaml](clash/browser-webrtc.yaml) | 浏览器常用 STUN/TURN 补充拦截，保留普通 QUIC | REJECT |
 | [telegram.list](clash/telegram.list) | Telegram 域名及网络地址 | PROXY |
 | [steam.yaml](clash/steam.yaml) | Steam 商店、社区和静态资源 | PROXY |
 | [steam-download.yaml](clash/steam-download.yaml) | Steam 游戏与客户端下载 CDN | DIRECT |
+| [apple-cdn.yaml](clash/apple-cdn.yaml) | App Store 资源、系统更新／恢复、Xcode 等专用下载 CDN | DIRECT / 苹果CDN |
 | [download.list](clash/download.list) | 下载工具进程 | DIRECT |
 | [download-mirrors.yaml](clash/download-mirrors.yaml) | GitHub / Hugging Face、软件源、包仓库和容器镜像下载 | DIRECT |
 | [lan.yaml](clash/lan.yaml) | 局域网、本机和链路本地地址 | DIRECT |
@@ -33,11 +36,15 @@
 
 ## 镜像下载专区
 
-`download-mirrors` 独立收录镜像域名，统一使用 `DIRECT`，排在 AI、GitHub、CDN、广告及通用代理规则之前。覆盖 `gh-proxy.com` / `.org`、`ghproxy.net`、`ghfast.top`、`gh.llkk.cc`、`github.akams.cn`、`hf-mirror.com`，以及清华、科大、上交等软件源和 npm、Rust、Go、容器镜像。完整清单见规则文件，来源及抽查结果见 [维护记录](docs/rule-sources.md)。
+`download-mirrors` 独立收录 64 条镜像规则，统一使用 `DIRECT`，排在 AI、GitHub、CDN、广告及通用代理规则之前。覆盖用户指定的 26 个 GitHub Release / ZIP、Git Clone、SSH、Raw 镜像主机，HF-Mirror，以及高校、云厂商、npm、Python、Linux、Rust、Go 和容器软件源。完整清单见规则文件；2026-11-14 的逐站结果见 [镜像记录](docs/mirror-probes-2026-11-14.md)，历史来源见 [维护记录](docs/rule-sources.md)。镜像服务器的地区不会将其改分到“非美服务”组。
 
 只根据实际连接的镜像主机匹配，不使用 `mirror` / `github` / `download` 关键词、文件后缀、通用下载进程或整个云服务商域名判断。`github.com`、`githubusercontent.com`、`huggingface.co`、`hf.co` 和 `xethub.hf.co` 不属于此分类；原有 `download.list` 继续单独管理下载工具进程。已列出的 jsDelivr 主机同时分发 GitHub 和 npm 内容，这些主机上的内容都会直连。
 
 规则只决定出口，不会把原站 URL 自动替换成镜像。请在工具里选用镜像地址，例如设置 `HF_ENDPOINT=https://hf-mirror.com`。如果镜像返回 302 跳到原站或未收录的对象存储，新连接会按目标主机重新匹配；只在确认专用镜像下载域名后补入，不能将共享的 `amazonaws.com`、`cloudflarestorage.com` 或 `cloudflare.com` 整体直连。镜像规则收录不保证服务当前可达，也不会自动发现新镜像。
+
+## Steam / Apple CDN
+
+下载与静态 CDN 使用独立 `steam-download`（26 条）和 `apple-cdn`（24 条），默认直连，位于对应平台的通用规则之前。主 Clash 可分别在 `Steam下载`、`苹果CDN` 切换出口；Builtin 与 Sing-Box 显式直连。Apple 账号、商店等业务继续采用原策略；共享 CDN 根域和 IP 不整体直连。DNS 调度、官方主机清单、真实文件 HEAD 与内核验证见 [CDN 专项](docs/cdn-routing.md)。
 
 ## 使用方式
 
@@ -101,6 +108,22 @@ rule-providers:
     path: ./ruleset/ai.yaml
     interval: 86400
 
+  crypto-regional:
+    type: http
+    behavior: classical
+    format: yaml
+    url: https://raw.githubusercontent.com/ackness/rules/main/clash/crypto-regional.yaml
+    path: ./ruleset/crypto-regional.yaml
+    interval: 86400
+
+  twitter-domain:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://raw.githubusercontent.com/ackness/rules/main/clash/twitter-domain.yaml
+    path: ./ruleset/twitter-domain.yaml
+    interval: 86400
+
   crypto:
     type: http
     behavior: classical
@@ -115,6 +138,14 @@ rule-providers:
     format: text
     url: https://raw.githubusercontent.com/ackness/rules/main/clash/telegram.list
     path: ./ruleset/telegram.list
+    interval: 86400
+
+  apple-cdn:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://raw.githubusercontent.com/ackness/rules/main/clash/apple-cdn.yaml
+    path: ./ruleset/apple-cdn.yaml
     interval: 86400
 
   steam:
@@ -208,7 +239,7 @@ rule-providers:
 
 若原始地址下载困难，可将 `https://raw.githubusercontent.com/` 替换为 `https://gh-proxy.com/raw.githubusercontent.com/`。
 
-在 `rules` 中引用所需分类。下面的 `AI`、`Crypto`、`PROXY` 替换成已有策略组名称，其他规则按需插入，最终 `MATCH` 保持在最后。
+在 `rules` 中引用所需分类。下面的 `AI`、`Crypto`、`PROXY` 替换成已有策略组名称；`非美服务` 应是仅含明确非美国节点的手动选择组，无候选时拒绝连接，不引用全局自动组。其他规则按需插入，最终 `MATCH` 保持在最后。
 
 ```yaml
 rules:
@@ -219,12 +250,15 @@ rules:
   - RULE-SET,tencent-direct,DIRECT
   - RULE-SET,lan,DIRECT
   - RULE-SET,ai,AI
+  - RULE-SET,crypto-regional,非美服务
+  - RULE-SET,crypto,Crypto
+  - RULE-SET,twitter-domain,PROXY
+  - RULE-SET,apple-cdn,DIRECT
+  - RULE-SET,steam-download,DIRECT
   - RULE-SET,reject,REJECT
   - RULE-SET,ad,REJECT
   - RULE-SET,cn-games,DIRECT
   - RULE-SET,cn-apps,DIRECT
-  - RULE-SET,steam-download,DIRECT
-  - RULE-SET,crypto,Crypto
   - RULE-SET,telegram,PROXY
   - RULE-SET,steam,PROXY
   - RULE-SET,download,DIRECT
@@ -235,7 +269,8 @@ rules:
 
 ## 使用说明
 
-- `crypto` 已承接框架中的 30 条内联规则，并补回原运行规则集的 30 条明确域名；去重后本次为 450 条。Hyperliquid、Unit、Axiom、Privy 登录和 RPC 按服务域名分流；Privy 等共享主机也会影响其他使用它们的应用。同组不保证节点提供单一固定出口 IP。
+- `crypto` 当前为 464 条，`crypto-regional` 为其中 143 条的地区敏感子表。Binance 全球站、Hyperliquid、OKX、Polymarket、Predict.fun、Pump.fun、GMGN、DeBot、Axiom 及新增 DEX 由非美子表优先分流；Privy 等精确共享主机也会影响其他应用。非美表示出口偏好，不代表账号和所有产品可用，官方范围、域名核对和本机探测见 [地区记录](docs/service-regions.md)。
+- X/Twitter 新增独立 `twitter-domain`；原 `socialmedia-domain` 保留兼容覆盖。Google / GitHub 采用当前社区快照并补充官方 Copilot 会话端点；AI、广告、国内／代理兜底和地理 IP 的增量及冲突检查见 [社区复核](docs/community-review-2026-11-14.md)。Builtin 与 Sing-Box 补齐显式服务引用。
 - `claude` preserves historical service and shared dependency domains by explicit user preference. These also route other applications through Claude. Vendor suffixes replace unrestricted sentry/datadog/sift keywords; unverified IP/ASN ranges stay excluded. Domain ownership and exhaustive runtime dependency coverage are not guaranteed.
 - Claude 组使用手动选择的具体节点，不包含 `DIRECT` 或会自动切换的嵌套组；无节点时使用 `REJECT`。Claude 规则优先于通用直连与广告规则，其 UDP 单独拒绝。节点被删除、订阅刷新或选择缓存重置后，应重新核对出口；双栈或服务端出口轮换无法仅靠规则消除。
 - 隐私与性能采用分层方案：Chrome 的 `WebRtcIPHandling`、Edge 的 `WebRtcLocalhostIpHandling` 设为 `disable_non_proxied_udp`，限制未代理的 WebRTC UDP；普通网页 QUIC 不受这项策略直接限制。浏览器通话可能改走 TCP、增加延迟或失败。参见 [Chromium 策略定义](https://github.com/chromium/chromium/blob/main/components/policy/resources/templates/policy_definitions/WebRtc/WebRtcIPHandling.yaml) 和 [Edge 策略](https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies/webrtclocalhostiphandling)。
@@ -253,7 +288,7 @@ rules:
 
 ## Framework integration and generated Sing-Box files
 
-This repository now contains 37 categories. In addition to the curated service rules above, the framework's remaining categories are hosted here:
+This repository now contains 41 categories. In addition to the curated service rules above, the framework's remaining categories are hosted here:
 
 | Categories | Behavior | Purpose |
 |---|---|---|
@@ -272,10 +307,10 @@ challenges.cloudflare.com is deliberately absent from claude: the verification w
 
 The generated-file inventory is tracked in sing-box-generated.json. After deleting or renaming a category, build removes only obsolete files recorded in that inventory and updates it. Keep the inventory when changing the catalog and commit its generated update. Unknown JSON files are preserved and rejected by build/check; move unrelated JSON elsewhere before publishing. Check never creates or updates files.
 
-The main framework references 35 providers, builtin mode 16, and Sing-Box 14. Existing policy choices remain in the framework. AI now adopts this repository's curated list (including the migrated devinapps.com exception); ads use reject plus ad. This is intentionally different coverage from the former third-party lists.
+The main framework references 39 providers, builtin mode 23, and Sing-Box 20. Regional trading services use an explicit non-US selector ahead of the compatibility crypto aggregate; other policy choices remain in the framework. AI now adopts this repository's curated list (including the migrated devinapps.com exception); ads use reject plus ad. This is intentionally different coverage from the former third-party lists.
 
 Sing-Box conversion expands IP-ASN using the recorded RIPE announced-prefix snapshot in asn-prefixes.json. It cannot use Mihomo's no-resolve option; anchored process-name regexes become process-path regexes. These platform differences and snapshot freshness must be considered when updating rules. See the [official source format](https://sing-box.sagernet.org/configuration/rule-set/source-format/) and [headless rules](https://sing-box.sagernet.org/configuration/rule-set/headless-rule/).
 
-The imported 18 files have source URLs and SHA-256 hashes in upstream-snapshots.json. They are owned snapshots, not automatically synchronized upstream. Update them deliberately, preserve local edits, then rebuild Sing-Box output. Original licenses are retained under licenses/.
+The snapshot inventory has source URLs and SHA-256 hashes in upstream-snapshots.json. It records the original 18 categories plus reject. They are owned snapshots, not automatically synchronized upstream. Update them deliberately, preserve local edits and additionalSources/localAdditions, then rebuild Sing-Box output. For curated additions, upstreamSha256 identifies the fetched bytes and sha256 identifies the final file. Original licenses are retained under licenses/.
 
 Cloudflare classification excludes shared edge IP ranges and customer hosting suffixes (including pages.dev, workers.dev and r2.dev). Customer websites follow their own policies instead of inheriting the Cloudflare service selector.
