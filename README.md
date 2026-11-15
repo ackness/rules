@@ -302,7 +302,7 @@ This repository now contains 41 categories. In addition to the curated service r
 
 The cn-ipcidr geographic list is different from the historical cn-ip.list company allocations. lan and cn-ip remain optional; using this repository does not mean enabling every category in every client.
 
-The canonical sources are clash/ plus catalog.json. Run mise run build to regenerate all cataloged sing-box/*.json files, then mise run check to detect stale generated content. Publish both directories together. Do not edit generated JSON directly. This uses Bun's built-in YAML parser and needs no package installation.
+The canonical sources are clash/ plus catalog.json. Run mise run build to regenerate all cataloged sing-box/*.json files and artifact-manifest.json, then mise run check to detect stale generated content. Publish the generated JSON and artifact manifest together with the Clash files. The manifest records each rule file's Git blob SHA-1 and size at that commit, allowing the framework to keep verifying immutable downloads when the anonymous GitHub API quota is exhausted. This uses Bun's built-in YAML parser and needs no package installation.
 
 challenges.cloudflare.com is deliberately absent from claude: the verification widget must share the embedding site's egress IP, which a per-destination ruleset cannot express. Consuming configs pin it to their general web selector before the Claude ruleset.
 

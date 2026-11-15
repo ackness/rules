@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -97,4 +98,21 @@ if (!check) {
   for (const file of generatedFiles.filter(file => !expectedOutputs.has(file))) fs.rmSync(generatedPath(file), { force: true });
   fs.writeFileSync(manifestFile, JSON.stringify(outputFiles, null, 2) + '\n');
 }
+// Committed blob metadata allows Workers to check updates when GitHub's shared
+// anonymous API quota is exhausted. The index excludes itself to avoid cycles.
+const artifacts = { version: 1, files: {} };
+for (const [name, entry] of Object.entries(catalog)) {
+  for (const file of [entry.file, `sing-box/${name}.json`]) {
+    const bytes = fs.readFileSync(path.join(root, file));
+    artifacts.files[file] = {
+      sha: createHash('sha1').update(`blob ${bytes.length}\0`).update(bytes).digest('hex'),
+      size: bytes.length,
+    };
+  }
+}
+const artifactFile = path.join(root, 'artifact-manifest.json');
+const artifactText = JSON.stringify(artifacts, null, 2) + '\n';
+if (check) {
+  if (!fs.existsSync(artifactFile) || fs.readFileSync(artifactFile, 'utf8') !== artifactText) throw Error('Stale artifact manifest; run the build');
+} else fs.writeFileSync(artifactFile, artifactText);
 console.log(`${check ? 'Checked' : 'Generated'} ${Object.keys(catalog).length} categories (${total} source entries).`);

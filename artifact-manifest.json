@@ -1,0 +1,333 @@
+{
+  "version": 1,
+  "files": {
+    "clash/ad.list": {
+      "sha": "0a5bb85fddeda1411107544c2652415fea077adf",
+      "size": 15433
+    },
+    "sing-box/ad.json": {
+      "sha": "f0e6f37896721dd7c3bc0e48cc22e554cc03bc25",
+      "size": 13518
+    },
+    "clash/ai.yaml": {
+      "sha": "b3fa4c948949030b186869dd6d2a54ddcc7c29ca",
+      "size": 8116
+    },
+    "sing-box/ai.json": {
+      "sha": "cff3cf9f8906cc014b995ed5ca3e2a79a96edff6",
+      "size": 6618
+    },
+    "clash/analysis.yaml": {
+      "sha": "fb4ecbcb37fffc013de90b92854da86b42124656",
+      "size": 156
+    },
+    "sing-box/analysis.json": {
+      "sha": "896021158b0d4735b8d30c62fd3c020d71415a5c",
+      "size": 106
+    },
+    "clash/apple-cdn.yaml": {
+      "sha": "3a0ceb47747e3ffb1aedb959498161ef9c8387eb",
+      "size": 1324
+    },
+    "sing-box/apple-cdn.json": {
+      "sha": "5e494b93f111d2eb32b4173b278af1153b9ff688",
+      "size": 986
+    },
+    "clash/apple-cn-domain.yaml": {
+      "sha": "8a8089783da6e8f87793092be33e43e3ec93c6e0",
+      "size": 5094
+    },
+    "sing-box/apple-cn-domain.json": {
+      "sha": "6a93992ce9d5252b7c7ea52872ddaaad767b1205",
+      "size": 5984
+    },
+    "clash/apple-domain.yaml": {
+      "sha": "32b2085c78fd34733b9922f49af16eed87bb0dae",
+      "size": 47703
+    },
+    "sing-box/apple-domain.json": {
+      "sha": "4fd9623f6914842bd45ebda8a16d0ccf34353c12",
+      "size": 53629
+    },
+    "clash/browser-webrtc.yaml": {
+      "sha": "30dd0a9d775f8c8da428c83a0dc64d7a1bbc9f09",
+      "size": 755
+    },
+    "sing-box/browser-webrtc.json": {
+      "sha": "55b4cf14c2e1ffa10ddcdde76d2c92a018923f61",
+      "size": 1135
+    },
+    "clash/claude.yaml": {
+      "sha": "b5b969d74b2a0051630ab663b6ae21fcd84a4c87",
+      "size": 3649
+    },
+    "sing-box/claude.json": {
+      "sha": "05fc824489f9a9d8a8e4ef3a7304d209e845e492",
+      "size": 2383
+    },
+    "clash/cloudflare.yaml": {
+      "sha": "328510846a98db09b02d83862e13415ab594d05f",
+      "size": 2546
+    },
+    "sing-box/cloudflare.json": {
+      "sha": "1d6ae445073059c100e31831d57c658b9bff4068",
+      "size": 1852
+    },
+    "clash/cn-analysis.yaml": {
+      "sha": "e575f4bd37488ac1dfe691ff197dd1fabaafe602",
+      "size": 212
+    },
+    "sing-box/cn-analysis.json": {
+      "sha": "bc20b9708a257399167714f5354fc32ee3da20f0",
+      "size": 132
+    },
+    "clash/cn-apps.yaml": {
+      "sha": "a49266b24963c1083cf0805d4f6ac03439202317",
+      "size": 11498
+    },
+    "sing-box/cn-apps.json": {
+      "sha": "23f346c2ff9d33a736372e9d3b43162e877ae606",
+      "size": 8213
+    },
+    "clash/cn-domain.yaml": {
+      "sha": "8f2f0e56a1ca193b4bd3c35359fc95b2497b2104",
+      "size": 2274663
+    },
+    "sing-box/cn-domain.json": {
+      "sha": "e734f4b508dae862b55fa1b75a44c26611aed676",
+      "size": 2605266
+    },
+    "clash/cn-games.yaml": {
+      "sha": "76337845d29083fd5d38ed39a70b7223c7bee805",
+      "size": 7690
+    },
+    "sing-box/cn-games.json": {
+      "sha": "e4ca8a4dd757bf9540ac0a86ff88da5f7b9b1396",
+      "size": 4962
+    },
+    "clash/cn-ip.list": {
+      "sha": "be7f0abb998e45a00dab54470a4cb62fce6af6ab",
+      "size": 7907
+    },
+    "sing-box/cn-ip.json": {
+      "sha": "cb9bedca6d9a547d39470aa8df4c0344e6cbda99",
+      "size": 5899
+    },
+    "clash/cn-ipcidr.yaml": {
+      "sha": "bc96cf1cd4a3546572a1efd91d8623d3a8d3fb17",
+      "size": 211485
+    },
+    "sing-box/cn-ipcidr.json": {
+      "sha": "50e2fdc8548ef324dccf0bca9206d8951f74c2ac",
+      "size": 259751
+    },
+    "clash/crypto-regional.yaml": {
+      "sha": "28c2d88933e3fa3a0de4ba2ba3fa4664fcb590f0",
+      "size": 5453
+    },
+    "sing-box/crypto-regional.json": {
+      "sha": "30bddd79dd13f435b63f741e08053c33e1cf35e3",
+      "size": 3748
+    },
+    "clash/crypto.yaml": {
+      "sha": "a30ed48d297e3d8ec21d0d169ab480c4e1bc35fb",
+      "size": 16085
+    },
+    "sing-box/crypto.json": {
+      "sha": "c77d10913aa660d4ae1437b5b0c99318f4235d00",
+      "size": 11614
+    },
+    "clash/direct.list": {
+      "sha": "b7e470a1fe5992c9bc6119ac840d3b336cd1552e",
+      "size": 23014
+    },
+    "sing-box/direct.json": {
+      "sha": "5346e702c0c683744f5e22e689b39d73b5f4e74e",
+      "size": 20351
+    },
+    "clash/disney-domain.yaml": {
+      "sha": "60282eab002e2a7999bb43eec7904c405c87a35f",
+      "size": 5476
+    },
+    "sing-box/disney-domain.json": {
+      "sha": "26ae4fcce28494cdcd276be9cbfaf73be1395417",
+      "size": 6270
+    },
+    "clash/download.list": {
+      "sha": "71627c6939cb06cb36527370f37280b5409aa589",
+      "size": 737
+    },
+    "sing-box/download.json": {
+      "sha": "72515d00fcbf963e1559b9bf3d027e00a62e8c23",
+      "size": 581
+    },
+    "clash/download-mirrors.yaml": {
+      "sha": "ae80cee40e4695d9360985e4b38f5b25aac72358",
+      "size": 3028
+    },
+    "sing-box/download-mirrors.json": {
+      "sha": "761feca6850998abfbf805f772b0b9da5e68ce81",
+      "size": 1954
+    },
+    "clash/gits-domain.yaml": {
+      "sha": "8cce5055db2eb4e9d9cb3254bd459c6e28f3b244",
+      "size": 2943
+    },
+    "sing-box/gits-domain.json": {
+      "sha": "d4c6c335296ff575d37893836c24e7ef0599c9cc",
+      "size": 3348
+    },
+    "clash/google-domain.yaml": {
+      "sha": "6c242682852b0f9ba8c04acfb73e32827938fc77",
+      "size": 24953
+    },
+    "sing-box/google-domain.json": {
+      "sha": "273a6abe76ca47b2adfa5e0e27a56ccb74a1171e",
+      "size": 28775
+    },
+    "clash/google-ipcidr.yaml": {
+      "sha": "f468ff101d690c71e5f49273c40fe6e25b93222d",
+      "size": 215820
+    },
+    "sing-box/google-ipcidr.json": {
+      "sha": "36c03971d13bbbef647c56ce5168591bbb84e53d",
+      "size": 255781
+    },
+    "clash/hbo-domain.yaml": {
+      "sha": "dc605c08744252e7d70c3789db1a12d00ef01dd3",
+      "size": 1357
+    },
+    "sing-box/hbo-domain.json": {
+      "sha": "1655aa130fd64e923144af17f2fae432225e4788",
+      "size": 1624
+    },
+    "clash/lan.yaml": {
+      "sha": "dcfc28df0e08ad8507428eeee1920656c4007712",
+      "size": 824
+    },
+    "sing-box/lan.json": {
+      "sha": "e98f115daa1d22de0497d2d6d35a1111beb39326",
+      "size": 481
+    },
+    "clash/netflix-domain.yaml": {
+      "sha": "ed4cca5da139f65984cf489e751b7e04d2b313e4",
+      "size": 608
+    },
+    "sing-box/netflix-domain.json": {
+      "sha": "00b4ab99ba90e09e24cf25cfba48f3e1d5ac8e06",
+      "size": 752
+    },
+    "clash/netflix-ipcidr.yaml": {
+      "sha": "10572ff86ad046d7932d2002094ba5219f686671",
+      "size": 2986
+    },
+    "sing-box/netflix-ipcidr.json": {
+      "sha": "93a4056bfa71bb780e2608619eadb0ab42765433",
+      "size": 3662
+    },
+    "clash/primevideo-domain.yaml": {
+      "sha": "4084f90ad6d26d72c449a139aeace9669b456f1d",
+      "size": 714
+    },
+    "sing-box/primevideo-domain.json": {
+      "sha": "6719d2c50b389354a3fc8314d59d0c0893c74011",
+      "size": 916
+    },
+    "clash/private-domain.yaml": {
+      "sha": "3c919e094687c9c909eb93e3a39374f73c0b827a",
+      "size": 3543
+    },
+    "sing-box/private-domain.json": {
+      "sha": "db727719f8a916d57b10ccf798354cbd97b8b02c",
+      "size": 4077
+    },
+    "clash/private-ipcidr.yaml": {
+      "sha": "c0cf757d4fef4a0c026fbbf3b405060ba8360bc8",
+      "size": 341
+    },
+    "sing-box/private-ipcidr.json": {
+      "sha": "472c39e5e7ead44151538e3a224108e8cda8bd10",
+      "size": 497
+    },
+    "clash/proxy-domain.yaml": {
+      "sha": "33d50adc0a83e9bf62dd3e695f4b41114636e8a5",
+      "size": 622354
+    },
+    "sing-box/proxy-domain.json": {
+      "sha": "4d78cf03f5d394c5f280a2e4abb3f2ff5a01a879",
+      "size": 705930
+    },
+    "clash/reject.yaml": {
+      "sha": "c6d36d5ce61454ad18c05ac6da21392dc7868e2c",
+      "size": 5801856
+    },
+    "sing-box/reject.json": {
+      "sha": "7ec711239b7e1ed67c470d6c9a7d754b3fa0810c",
+      "size": 6402960
+    },
+    "clash/socialmedia-domain.list": {
+      "sha": "709e0b4022bc4f4cb0aedecad5b8b1ccbbc9dd08",
+      "size": 13474
+    },
+    "sing-box/socialmedia-domain.json": {
+      "sha": "2bcd30651daf1b0e7474770b077022b1387c919a",
+      "size": 20616
+    },
+    "clash/spotify-domain.yaml": {
+      "sha": "929b42cec8f17ac597ba6c7e9f17b759918f9397",
+      "size": 802
+    },
+    "sing-box/spotify-domain.json": {
+      "sha": "a95231ddefffb7ca27b93918ae653e63ba8b26ae",
+      "size": 1016
+    },
+    "clash/steam-download.yaml": {
+      "sha": "d58c515edfd549b86b1e22152899323bc19c69dc",
+      "size": 1407
+    },
+    "sing-box/steam-download.json": {
+      "sha": "fbc97a0c463e4e8860b04ed09fddfd383b650d52",
+      "size": 1010
+    },
+    "clash/steam.yaml": {
+      "sha": "9b022752dec907682e4d30ecd9a66629c98eb0b0",
+      "size": 1272
+    },
+    "sing-box/steam.json": {
+      "sha": "98ea1c6f43e247029e2315b365e21f4be90e99c8",
+      "size": 1050
+    },
+    "clash/telegram.list": {
+      "sha": "792240b1fb568d241dad3567adc04d9c9a2a0a72",
+      "size": 1259
+    },
+    "sing-box/telegram.json": {
+      "sha": "4c6a8adca25679f50e991e392014d9ef99de0926",
+      "size": 916
+    },
+    "clash/tencent-direct.yaml": {
+      "sha": "87f05a37c0a923bb8ef594c74bee40153930f536",
+      "size": 775
+    },
+    "sing-box/tencent-direct.json": {
+      "sha": "b6bb12fc0ea325ca524a012bcddc5a46b075c457",
+      "size": 552
+    },
+    "clash/twitter-domain.yaml": {
+      "sha": "197586329f21c9e8eb254bcd5df1c27235aa62a3",
+      "size": 702
+    },
+    "sing-box/twitter-domain.json": {
+      "sha": "d0d8a20ffb907db3021895905e5655167bca1bd6",
+      "size": 615
+    },
+    "clash/youtube-domain.yaml": {
+      "sha": "894b3a6b37358d10c243c16c0c4a3219e3c902ce",
+      "size": 3821
+    },
+    "sing-box/youtube-domain.json": {
+      "sha": "7cb1ad138b02de567a7b6f3cfe8f2fc473bb883a",
+      "size": 4467
+    }
+  }
+}
