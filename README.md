@@ -44,7 +44,7 @@
 
 ## Steam / Apple CDN
 
-下载与静态 CDN 使用独立 `steam-download`（26 条）和 `apple-cdn`（24 条），默认直连，位于对应平台的通用规则之前。主 Clash 可分别在 `Steam下载`、`苹果CDN` 切换出口；Builtin 与 Sing-Box 显式直连。Apple 账号、商店等业务继续采用原策略；共享 CDN 根域和 IP 不整体直连。DNS 调度、官方主机清单、真实文件 HEAD 与内核验证见 [CDN 专项](docs/cdn-routing.md)。
+下载与静态 CDN 使用独立 `steam-download`（26 条）和 `apple-cdn`（24 条），默认直连，位于对应平台的通用规则之前。主 Clash 在 `下载加速` 统一切换 Steam / Apple CDN 出口，Builtin 与 Sing-Box 显式直连。Apple 账号、商店等业务继续采用原策略；共享 CDN 根域和 IP 不整体直连。DNS 调度、官方主机清单、真实文件 HEAD 与内核验证见 [CDN 专项](docs/cdn-routing.md)。
 
 ## 使用方式
 
@@ -308,7 +308,7 @@ challenges.cloudflare.com is deliberately absent from claude: the verification w
 
 The generated-file inventory is tracked in sing-box-generated.json. After deleting or renaming a category, build removes only obsolete files recorded in that inventory and updates it. Keep the inventory when changing the catalog and commit its generated update. Unknown JSON files are preserved and rejected by build/check; move unrelated JSON elsewhere before publishing. Check never creates or updates files.
 
-The main framework references 39 providers, builtin mode 23, and Sing-Box 20. Regional trading services use an explicit non-US selector ahead of the compatibility crypto aggregate; other policy choices remain in the framework. AI now adopts this repository's curated list (including the migrated devinapps.com exception); ads use reject plus ad. This is intentionally different coverage from the former third-party lists.
+The main framework references 38 providers, builtin mode 22, and Sing-Box 19. Regional trading services use an explicit non-US selector ahead of the compatibility crypto aggregate; other policy choices remain in the framework. AI now adopts this repository's curated list (including the migrated devinapps.com exception); ads use reject plus ad. This is intentionally different coverage from the former third-party lists.
 
 Sing-Box conversion expands IP-ASN using the recorded RIPE announced-prefix snapshot in asn-prefixes.json. It cannot use Mihomo's no-resolve option; anchored process-name regexes become process-path regexes. These platform differences and snapshot freshness must be considered when updating rules. See the [official source format](https://sing-box.sagernet.org/configuration/rule-set/source-format/) and [headless rules](https://sing-box.sagernet.org/configuration/rule-set/headless-rule/).
 

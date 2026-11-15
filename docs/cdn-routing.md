@@ -4,12 +4,12 @@
 
 | 分类 | 当前覆盖 | 主 Clash | Builtin / Sing-Box |
 |---|---|---|---|
-| `steam-download` | 26 条：SteamPipe、游戏下载、客户端更新和专用 CDN | `Steam下载`，默认 `DIRECT` | 显式 `DIRECT` / `direct` |
+| `steam-download` | 26 条：SteamPipe、游戏下载、客户端更新和专用 CDN | `下载加速`，默认 `DIRECT` | 显式 `DIRECT` / `direct` |
 | `steam` | 商店、社区、直播及常用网页静态资源 | 原 `Steam` 策略 | 保持原主选择器／直连总表行为 |
-| `apple-cdn` | 24 条：App Store 资源／下载、OS 更新与恢复、Xcode、GarageBand、Swift Playgrounds 等 | `苹果CDN`，默认 `DIRECT`，可改选节点 | 显式 `DIRECT` / `direct` |
+| `apple-cdn` | 24 条：App Store 资源／下载、OS 更新与恢复、Xcode、GarageBand、Swift Playgrounds 等 | `下载加速`，默认 `DIRECT` | 显式 `DIRECT` / `direct` |
 | `apple-cn-domain` / `apple-domain` | 原国内入口、账号、商店、云服务及其余 Apple 业务 | 原策略 | 保持已有策略 |
 
-Apple CDN 和 Steam 下载在三个输出中均优先于广告、直连总表与通用代理；主 Clash 也优先于更宽的 Apple / Steam 分类。主模板的两个下载组允许手动切换出口，以便处理特定运营商或 CDN 的直连故障。
+Apple CDN 和 Steam 下载在三个输出中均优先于广告、直连总表与通用代理；主 Clash 也优先于更宽的 Apple / Steam 分类。主模板的两类内容共用 `下载加速`，允许手动切换出口，以便处理特定运营商或 CDN 的直连故障。分组整理保留服务分类和镜像固定直连偏好。
 
 ## 主机边界与来源
 
@@ -42,6 +42,6 @@ Sing-Box 原模板的 `route.default_domain_resolver` 是 `google`。仅增加 D
 | [macOS 恢复清单](https://mesu.apple.com/assets/macos/com_apple_macOSIPSW/com_apple_macOSIPSW.xml) | 200，解析出的 3 个不同恢复地址均使用 `updates.cdn-apple.com` |
 | 其中一个恢复地址 HEAD | 200，`binary/octet-stream`，约 25.6 GB；未下载镜像本体 |
 
-本地验证：类型检查与 128 项测试通过；295 个源规则／生成 JSON 正反样例、三个最终输出中的 286 个域名策略样例通过。Mihomo v1.19.34 的 95 个模拟出口请求通过，涵盖新 CDN 和共享父域排除。Sing-Box v1.14.4 编译两个 CDN 规则集、检查包含全部 20 个 provider 的配置；另用本地 DNS / HTTP 服务运行 6 个真实内核请求，证实默认解析器为 `google` 时，这些 CDN 仍通过 `local` 解析并直连，未向默认解析器发出查询。模拟请求不访问样例网站。
+本地验证：类型检查与 128 项测试通过；295 个源规则／生成 JSON 正反样例、三个最终输出中的 286 个域名策略样例通过。Mihomo v1.19.34 的 95 个模拟出口请求通过，涵盖新 CDN 和共享父域排除。Sing-Box v1.14.4 编译两个 CDN 规则集、检查包含全部 19 个默认 provider 的配置；另用本地 DNS / HTTP 服务运行 6 个真实内核请求，证实默认解析器为 `google` 时，这些 CDN 仍通过 `local` 解析并直连，未向默认解析器发出查询。模拟请求不访问样例网站。
 
 规则仓库执行 `mise run build` / `mise run check`，工作区 Worker 执行 `npm run check` / `npm run check:rules` 可复核源规则、生成结果、分组和冲突。当前共 41 类；新增分类仍需先发布规则文件，再上线引用它的模板／代码，已有个人模板应合并更新。

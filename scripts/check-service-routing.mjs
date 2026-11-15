@@ -44,6 +44,8 @@ assert.deepEqual(generatedClaude.rules.flatMap(rule => rule.ip_cidr || []), clau
 
 const crypto = new Set(source('crypto'));
 for (const rule of source('crypto-regional')) assert(crypto.has(rule), `Regional rule missing from compatibility aggregate: ${rule}`);
+const cnDirect = new Set([...source('cn-apps'), ...source('cn-games')]);
+for (const rule of source('tencent-direct')) assert(cnDirect.has(rule), `Tencent compatibility rule needs a CN application/game owner: ${rule}`);
 for (const name of ['crypto', 'crypto-regional', 'download-mirrors', 'twitter-domain', 'google-domain', 'gits-domain', 'apple-cdn', 'steam-download', 'claude']) {
   const rules = source(name);
   assert.equal(new Set(rules).size, rules.length, `Duplicate source entry: ${name}`);
